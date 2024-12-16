@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace X_Launcher;
+namespace X_Launcher_GUI;
 
 sealed class Program
 {

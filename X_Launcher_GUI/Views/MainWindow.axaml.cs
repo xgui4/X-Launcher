@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace X_Launcher.Views;
+namespace X_Launcher_GUI.Views;
 
 public partial class MainWindow : Window
 {

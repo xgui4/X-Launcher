@@ -4,10 +4,10 @@ using Avalonia.Data.Core;
 using Avalonia.Data.Core.Plugins;
 using System.Linq;
 using Avalonia.Markup.Xaml;
-using X_Launcher.ViewModels;
-using X_Launcher.Views;
+using X_Launcher_GUI.ViewModels;
+using X_Launcher_GUI.Views;
 
-namespace X_Launcher;
+namespace X_Launcher_GUI;
 
 public partial class App : Application
 {
