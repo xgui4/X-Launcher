@@ -6,10 +6,15 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("Welcome to X-Launcher!");
+        Console.WriteLine(ProductionContext.Product + " " + ProductionContext.Version);
         
-        var test = User.CreateInstance("Test", false, false , false);
+        Console.WriteLine("Par : " + ProductionContext.Developer);
+        
+        Console.WriteLine("Licence : " + ProductionContext.License);
 
-        Console.WriteLine(test.ToString()); 
+        var link = ProductionContext.RepositoryUri; 
+        
+        Console.WriteLine("Lien du répertoire du code source : " + link.ToString());
+
     }
 }

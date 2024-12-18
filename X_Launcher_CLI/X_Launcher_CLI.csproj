@@ -12,4 +12,9 @@
       <ProjectReference Include="..\X_Launcher_Core\X_Launcher_Core.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ViewModels\" />
+      <Folder Include="Views\" />
+    </ItemGroup>
+
 </Project>
