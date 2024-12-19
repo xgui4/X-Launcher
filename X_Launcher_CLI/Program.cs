@@ -1,4 +1,5 @@
-﻿using X_Launcher_Core;
+﻿using X_Launcher_CLI.Views;
+using X_Launcher_Core;
 
 namespace X_Launcher_CLI; 
 
@@ -6,15 +7,10 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine(ProductionContext.Product + " " + ProductionContext.Version);
-        
-        Console.WriteLine("Par : " + ProductionContext.Developer);
-        
-        Console.WriteLine("Licence : " + ProductionContext.License);
+        ConsoleDisplay.ChangeBackgroundColor(ConsoleDisplayColor.White);
 
-        var link = ProductionContext.RepositoryUri; 
-        
-        Console.WriteLine("Lien du répertoire du code source : " + link.ToString());
+        MenuView.Display();
 
+        ConsoleDisplay.ResetColor();
     }
 }
