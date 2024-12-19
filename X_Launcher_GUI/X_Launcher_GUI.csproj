@@ -29,4 +29,8 @@
     <ItemGroup>
       <Folder Include="Models\" />
     </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\X_Launcher_Core\X_Launcher_Core.csproj" />
+    </ItemGroup>
 </Project>
