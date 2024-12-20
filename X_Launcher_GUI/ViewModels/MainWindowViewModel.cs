@@ -29,7 +29,8 @@ public partial class MainWindowViewModel : ObservableObject
     private async Task Login()
     {
         await Task.Delay(TimeSpan.FromSeconds(5));
-        Greeting = "Login Sucess !"; 
+        Greeting = "Login Sucess !";
+        Console.WriteLine("Le login n'a pas été encore implementer !");
     }
 
     private bool CanLogin() => !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password);
