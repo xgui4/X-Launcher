@@ -4,8 +4,6 @@ namespace X_Launcher_Core
     {
         private readonly List<IModel> options;
         
-        public static string WelcomeMessage = "Welcome to X-Launcher!";
-
         public const string Version = "Dev Build";
         public const string Developer = "Xgui4 Studio";
         public const string Product = "X Launcher Core";

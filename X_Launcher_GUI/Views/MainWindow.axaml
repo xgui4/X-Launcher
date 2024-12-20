@@ -21,13 +21,32 @@
         <vm:MainWindowViewModel />
     </Design.DataContext>
 
-    <StackPanel Background="Gray" VerticalAlignment="Center">
+    <StackPanel VerticalAlignment="Center" Spacing="10" Margin="20">
         <!--  Également a faire le binding plus tard  -->
-        <TextBlock HorizontalAlignment="Center" Text="{Binding Greeting}" />
+        <TextBlock HorizontalAlignment="Center" Text="{Binding Greeting}"/>
+
+		<Label Content="Username" />
+		<TextBox x:Name="usernameInput" Text="{Binding Username}" />
+		<Label Content="Password" />
+		<TextBox x:Name="passwordInput" PasswordChar="*" Text="{Binding Password}" />
+
+		<Button
+			Background="Red"
+			Foreground="Black"
+			HorizontalAlignment="Stretch"
+			HorizontalContentAlignment="Center"
+			Content="Login"
+			Command="{Binding LoginCommand}" />
+		
         <Button
-            Content="Login"
+			Background="Green"
+            Content="Demo"
+			Command="{Binding SetDemoCommand}"
+			CommandParameter="Xgui4"
             HorizontalAlignment="Stretch"
             HorizontalContentAlignment="Center"
-            x:Name="LoginButton" />
+            x:Name="DemoButton" 
+			/>
+		
     </StackPanel>
 </Window>
