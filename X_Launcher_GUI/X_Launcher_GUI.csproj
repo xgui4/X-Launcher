@@ -33,4 +33,10 @@
     <ItemGroup>
       <ProjectReference Include="..\X_Launcher_Core\X_Launcher_Core.csproj" />
     </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\MainWindowView.axaml.cs">
+        <DependentUpon>MainWindowView.axaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
 </Project>
