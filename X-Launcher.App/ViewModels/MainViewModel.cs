@@ -3,9 +3,9 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Threading.Tasks;
 
-namespace X_Launcher_GUI.ViewModels;
+namespace X_Launcher.ViewModels;
 
-public partial class MainWindowViewModel : ObservableObject
+public partial class MainViewModel : ObservableObject
 {
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(LoginCommand))]

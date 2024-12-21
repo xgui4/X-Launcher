@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:X_Launcher.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="X_Launcher.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+	<StackPanel VerticalAlignment="Center" Spacing="10" Margin="20">
+		<!--  Également a faire le binding plus tard  -->
+		<TextBlock HorizontalAlignment="Center" Text="{Binding Greeting}"/>
+
+		<Label Content="Username" />
+		<TextBox x:Name="usernameInput" Text="{Binding Username}" />
+		<Label Content="Password" />
+		<TextBox x:Name="passwordInput" PasswordChar="*" Text="{Binding Password}" />
+
+		<Button
+			Background="Red"
+			Foreground="Black"
+			HorizontalAlignment="Stretch"
+			HorizontalContentAlignment="Center"
+			Content="Login"
+			Command="{Binding LoginCommand}" />
+
+		<Button
+			Background="Green"
+            Content="Demo"
+			Command="{Binding SetDemoCommand}"
+			CommandParameter="Xgui4"
+            HorizontalAlignment="Stretch"
+            HorizontalContentAlignment="Center"
+            x:Name="DemoButton"
+			/>
+	</StackPanel>
+</UserControl>

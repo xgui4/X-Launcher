@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\X_Launcher_Core\X_Launcher_Core.csproj" />
+      <ProjectReference Include="..\X_Launcher.Core\X_Launcher.Core.csproj" />
     </ItemGroup>
 
     <ItemGroup>

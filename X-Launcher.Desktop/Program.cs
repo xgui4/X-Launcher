@@ -1,9 +1,10 @@
-﻿using Avalonia;
-using System;
+﻿using System;
 
-namespace X_Launcher_GUI;
+using Avalonia;
 
-sealed class Program
+namespace X_Launcher.Desktop;
+
+class Program
 {
     // Initialization code. Don't use any Avalonia, third-party APIs or any
     // SynchronizationContext-reliant code before AppMain is called: things aren't initialized
@@ -18,4 +19,5 @@ sealed class Program
             .UsePlatformDetect()
             .WithInterFont()
             .LogToTrace();
+
 }
