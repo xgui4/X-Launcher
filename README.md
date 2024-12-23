@@ -6,8 +6,6 @@ Un Minecraft®️ Launcher écrit en C#
 
 Il suit le pattern MVVM et est disponible en GUI ou en CLI.
 
-Il est en ce moment en construction : seulement l'interface est en développement pour le moment
-
 ## Technologie/Librairie Utilié
 
 - Avalonia®️ UI <!-- Notice légale à ajouté -->
@@ -20,12 +18,12 @@ Il est en ce moment en construction : seulement l'interface est en développemen
 
 ## Projets / Structure du programme
 
-- X-Launcher.Core : "Librairie" contenant les classes et méthodes communes et la logique de la connexion
+- X-Launcher.Core : "Librairie" contenant les classes et méthodes communes et la logique de la connexion - Fonctionnelle pour une session hors-ligne
 
-- X-Launcher.App : La logique et l'interface graphique
+- X-Launcher.App : La logique et l'interface graphique - En pause de développement
 
 - X-Launcher.Desktop : Boilerplate du framework pour l'interface graphique
 
-- X-Launcher.CLI : La version en ligne de commande
+- X-Launcher.CLI : La version en ligne de commande - Fonctionnelle pour une session hors-ligne
 
 ### License : MIT

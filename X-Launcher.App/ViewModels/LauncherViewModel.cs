@@ -5,5 +5,6 @@ namespace X_Launcher.ViewModels;
 
 public partial class LauncherViewModel : ObservableRecipient
 {
-    
+    [ObservableProperty]
+    public string _name = ""; 
 }

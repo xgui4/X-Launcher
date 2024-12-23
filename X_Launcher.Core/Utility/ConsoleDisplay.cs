@@ -5,18 +5,19 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace X_Launcher_Core
+namespace X_Launcher_Core.Utility
 {
     public class ConsoleDisplay
     {
         private const ConsoleDisplayColor defaultFGColor = ConsoleDisplayColor.Default;
         private const ConsoleDisplayColor defaultBGColor = ConsoleDisplayColor.Black;
 
-        private ConsoleDisplay() {
-            Console.BackgroundColor = (ConsoleColor)defaultBGColor; 
+        private ConsoleDisplay()
+        {
+            Console.BackgroundColor = (ConsoleColor)defaultBGColor;
         }
 
-        public static void PrintNewLine(string message, ConsoleDisplayColor color = defaultFGColor) 
+        public static void PrintNewLine(string message, ConsoleDisplayColor color = defaultFGColor)
         {
             Console.ForegroundColor = (ConsoleColor)color;
             Console.WriteLine(message);
@@ -24,7 +25,7 @@ namespace X_Launcher_Core
 
         public static void Print(string message, ConsoleDisplayColor color = defaultFGColor)
         {
-            Console.ForegroundColor = (ConsoleColor)color; 
+            Console.ForegroundColor = (ConsoleColor)color;
             Console.Write(message);
         }
 
@@ -36,7 +37,13 @@ namespace X_Launcher_Core
         public static void ResetColor()
         {
             Console.ForegroundColor = (ConsoleColor)defaultFGColor;
-            Console.BackgroundColor = (ConsoleColor)defaultBGColor; 
+            Console.BackgroundColor = (ConsoleColor)defaultBGColor;
+        }
+
+        public static void Refresh()
+        {
+            Console.Clear();
+            ResetColor();
         }
     }
 }

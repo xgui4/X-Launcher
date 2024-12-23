@@ -17,7 +17,7 @@ public partial class MainViewModel : ObservableRecipient
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
 
-    private string? _password;
+    private string? _password; 
 
     partial void OnPasswordChanged(string? value)
     {

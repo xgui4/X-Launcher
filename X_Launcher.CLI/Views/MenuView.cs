@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using X_Launcher_Core;
+using X_Launcher_Core.Utility;
 
 namespace X_Launcher_CLI.Views
 {
@@ -12,7 +13,7 @@ namespace X_Launcher_CLI.Views
     {
         public MenuView() { }
 
-        public static void Display()
+        public static void DisplayHeader()
         {
             ConsoleDisplay.PrintNewLine(ProductionContext.Product + " " + ProductionContext.Version, ConsoleDisplayColor.Blue);
 
@@ -25,6 +26,16 @@ namespace X_Launcher_CLI.Views
             ConsoleDisplay.PrintNewLine("Build Version : " + ProductionContext.BuildNumber, ConsoleDisplayColor.Green); 
 
             ConsoleDisplay.PrintNewLine("Lien du répertoire du code source : " + ProductionContext.RepositoryUri.ToString(), ConsoleDisplayColor.Blue);
+        }
+
+        public static void DisplayMenu(List<Object> content)
+        {
+            ConsoleDisplay.PrintNewLine("Choose a option : ", ConsoleDisplayColor.Magenta);
+            content.ForEach(
+                item => { 
+                    ConsoleDisplay.PrintNewLine(item.ToString() ?? "Erreur!", ConsoleDisplayColor.Blue);
+                }
+                );
         }
     }
 }

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace X_Launcher_Core
+namespace X_Launcher_Core.Utility
 {
     public enum ConsoleDisplayColor
     {
-        Default = ConsoleColor.Gray, 
+        Default = ConsoleColor.Gray,
         Black = ConsoleColor.Black,
         White = ConsoleColor.White,
         Red = ConsoleColor.Red,
