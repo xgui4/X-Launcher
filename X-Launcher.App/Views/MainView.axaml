@@ -1,0 +1,72 @@
+<UserControl
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="X_Launcher.Views.MainView"
+    x:DataType="vm:MainViewModel"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:X_Launcher.ViewModels"
+	xmlns:views="clr-namespace:X_Launcher.Views"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainViewModel />
+    </Design.DataContext>
+
+    <ScrollViewer>
+        <StackPanel
+            Margin="20"
+            Spacing="10"
+            VerticalAlignment="Center">
+			 
+            <Label Content="Username" />
+            <TextBox Text="{Binding Username}" x:Name="UsernameInput" />
+
+            <Label Content="Version" />
+            <ComboBox
+                ItemsSource="{Binding Versions}"
+                SelectedItem="{Binding SelectedVersion}"
+                x:Name="VersionsComboBox" />
+
+            <Label Content="Launcher Path" />
+            <TextBox Text="{Binding LauncherPath}" x:Name="LauncherPathInput" />
+            <Button
+                Command="{Binding SearchLocallyCommand}"
+                Content="Search Locally"
+                x:Name="SearchLocallyButton" />
+
+            <Label Content="Minimum RAM (in MB)" />
+            <NumericUpDown
+                Maximum="{Binding MaxRam}"
+                Minimum="0"
+                Value="{Binding MinRam}"
+                x:Name="MinRamInput" />
+            <Label Content="Maximum RAM (in MB)" />
+            <NumericUpDown
+                Minimum="{Binding MinRam}"
+                Value="{Binding MaxRam}"
+                x:Name="MaxRamInput" />
+
+            <Button
+                Background="{Binding LoginButtonColor}"
+                Command="{Binding LoginCommand}"
+                Content="{Binding LoginLabel}"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center" />
+
+            <Button
+                Background="Green"
+                Command="{Binding SetLauncherCommand}"
+                Content="Launch Minecraft"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                x:Name="LauncherButton" />
+
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>

@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net9.0-Windows</TargetFramework>
+        <RootNamespace>X_Launcher_CLI_Windows</RootNamespace>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>X-Launcher.Windows</AssemblyName>
+        <IsPackable>false</IsPackable>
+        <Company>Xgui4</Company>
+        <Product>X Launcher CLI (Windows)</Product>
+        <AssemblyVersion>0.0.0.1</AssemblyVersion>
+        <AssemblyInformationalVersionAttribute> 0.0.0.1-Windows </AssemblyInformationalVersionAttribute>
+        <FileVersion>0.0.0.1</FileVersion>
+        <NeutralLanguage>en-001</NeutralLanguage>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\X_Launcher.CLI\X_Launcher.CLI.csproj" />
+    </ItemGroup>
+
+</Project>

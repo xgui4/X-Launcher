@@ -1,0 +1,28 @@
+<Window
+    Icon="/Assets/app-icon.ico"
+    Title="X Launcher Core"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d"
+    x:Class="X_Launcher.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:views="clr-namespace:X_Launcher.Views"
+    xmlns:vm="using:X_Launcher.ViewModels"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<ScrollViewer>
+		 <StackPanel>
+		    <views:HeaderView />
+		    <views:MainView  />
+			 <Panel Margin="10">
+                <TextBlock
+                    Grid.Row="2"
+                    Text="{Binding Status}"
+                    x:DataType="vm:StatusViewModel"
+                    x:Name="LauncherControl" />
+			 </Panel>
+        </StackPanel>
+	</ScrollViewer>
+</Window>
