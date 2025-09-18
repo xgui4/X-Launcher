@@ -10,11 +10,8 @@ using X_Launcher_Core.Model;
 using X_Launcher_Core.Service;
 using X_Launcher_Core.Utility;
 using X_Launcher.ViewModel;
-using System.Runtime.CompilerServices;
-using System.Threading;
+
 using Handlers;
-using Avalonia.Controls;
-using Avalonia;
 
 namespace X_Launcher.ViewModels;
 
@@ -87,7 +84,7 @@ public partial class MainViewModel : ObservableRecipient
 
     private bool CanLaunch()
     {
-        return true; // _launcher.SessionIsValid(); temporaly disable due to not working proprely  
+        return true;  // _launcher.SessionIsValid(); // temporaly disabled
     }
 
     [RelayCommand(CanExecute = nameof(CanLaunch))]
@@ -95,11 +92,9 @@ public partial class MainViewModel : ObservableRecipient
     {
         if (_launcher.SessionIsValid() == false)
         {
-            // temporaly disabled due to no working properly right now !
-            /*
             await _displayHandler.UserInteractionAsync("Current Sessions is invalid! Do you want to retry the connection? Yes or No.", null, "Session Handler");
             await _launcher.AuthenticateAsync();
-            */
+            
         }
         _displayHandler ??= new GuiHandler();
         var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MinRam ?? 4000, MaxRam ?? 2000);
@@ -115,6 +110,24 @@ public partial class MainViewModel : ObservableRecipient
             await _displayHandler.ErrorAsync(ex.ToString());
             await _launcher.LaunchOfflineSessionAsync(); 
         } 
+    }
+    
+    [RelayCommand(CanExecute = nameof(CanLaunch))]
+    private async Task SetLauncherOffline()
+    {
+        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MinRam ?? 4000, MaxRam ?? 2000);
+        var launcherObject = new LauncherConfig(game.Path ?? GameConfig.DefaultVersion);
+        var user = new SessionInfo(Username ?? "Dev");
+        MinecraftLauncherService service = new(game, launcherObject, user ,_displayHandler);
+
+        try
+        {
+            await service.LaunchOfflineSessionAsync();
+        }
+        catch (Exception ex)
+        {
+            await _displayHandler.ErrorAsync(ex.ToString());
+        }
     }
 
     [RelayCommand]
@@ -142,6 +155,7 @@ public partial class MainViewModel : ObservableRecipient
         }
         else
         {
+            // `changer pour les versions déjà installer
             Versions =
             [
                 "1.21.4",

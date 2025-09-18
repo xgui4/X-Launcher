@@ -9,17 +9,12 @@ using X_Launcher_Core.Model;
 
 namespace X_Launcher.ViewModels;
 
-public partial class HeaderViewModel : ObservableRecipient
+public partial class HeaderViewModel(IDisplayHandler displayHandler) : ObservableRecipient
 {
-    private IDisplayHandler _displayHandler;
+    private IDisplayHandler _displayHandler = displayHandler;
 
-    public HeaderViewModel()
+    public HeaderViewModel() : this(new GuiHandler())
     {
-        _displayHandler = new GuiHandler();
-    }
-    public HeaderViewModel(IDisplayHandler displayHandler)
-    {
-        _displayHandler = displayHandler;
     }
 
     [ObservableProperty]
