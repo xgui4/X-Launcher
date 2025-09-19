@@ -24,40 +24,40 @@ public partial class MainViewModel : ObservableRecipient
     {
         _displayHandler = new GuiHandler();
         _launcher = new MinecraftLauncherService(_displayHandler);
-        InitializeComboBoxAsync().ConfigureAwait(false);
+        _ = InitializeComboBoxAsync();
     }
     public MainViewModel(GuiHandler displayHandler)
     {
         _displayHandler = displayHandler;
         _launcher = new MinecraftLauncherService(_displayHandler);
-        InitializeComboBoxAsync().ConfigureAwait(false);
+        _ = InitializeComboBoxAsync();
     }
-    
+
     [ObservableProperty]
     [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
     private string? _username;
-    
+
     [ObservableProperty]
-    private ObservableCollection<string> _versions = []; 
-    
-    [ObservableProperty] 
+    private ObservableCollection<string> _versions = [];
+
+    [ObservableProperty]
     private string? _selectedVersion;
-    
-    [ObservableProperty] 
+
+    [ObservableProperty]
     private string? _launcherPath;
 
     [ObservableProperty]
     private int? _minRam;
 
-    [ObservableProperty] 
+    [ObservableProperty]
     private int? _maxRam;
 
     [ObservableProperty]
     private string? _loginLabel = "Login";
 
     [ObservableProperty]
-    private string? _loginButtonColor = "Green"; 
-    
+    private string? _loginButtonColor = "Green";
+
     [RelayCommand]
     private async Task Login()
     {
@@ -73,7 +73,7 @@ public partial class MainViewModel : ObservableRecipient
             }
         }
         else if (LoginLabel == "Logout")
-        { 
+        {
             await _launcher.LogoutAsync();
             await Task.Delay(1000);
             LoginLabel = "Login";
@@ -84,23 +84,22 @@ public partial class MainViewModel : ObservableRecipient
 
     private bool CanLaunch()
     {
-        return true;  // _launcher.SessionIsValid(); // temporaly disabled
+        return _launcher.SessionIsValid();
     }
 
-    [RelayCommand(CanExecute = nameof(CanLaunch))]
+    [RelayCommand]
     private async Task SetLauncher()
     {
-        if (_launcher.SessionIsValid() == false)
+        if (!_launcher.SessionIsValid())
         {
             await _displayHandler.UserInteractionAsync("Current Sessions is invalid! Do you want to retry the connection? Yes or No.", null, "Session Handler");
             await _launcher.AuthenticateAsync();
-            
         }
         _displayHandler ??= new GuiHandler();
-        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MinRam ?? 4000, MaxRam ?? 2000);
+        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MaxRam ?? GameConfig.DefaultMaximumMemory, MinRam ?? GameConfig.DefaultMinimumMemory);
         var launcherObject = new LauncherConfig(game.Path ?? GameConfig.DefaultVersion);
         var user = new SessionInfo(Username ?? "Dev");
-        MinecraftLauncherService service = new(game, launcherObject, user ,_displayHandler);
+        MinecraftLauncherService service = new(game, launcherObject, user, _displayHandler);
         try
         {
             await service.LaunchOnlineSessionAsync();
@@ -108,17 +107,17 @@ public partial class MainViewModel : ObservableRecipient
         catch (Exception ex)
         {
             await _displayHandler.ErrorAsync(ex.ToString());
-            await _launcher.LaunchOfflineSessionAsync(); 
-        } 
+            await _launcher.LaunchOfflineSessionAsync();
+        }
     }
-    
-    [RelayCommand(CanExecute = nameof(CanLaunch))]
+
+    [RelayCommand()]
     private async Task SetLauncherOffline()
     {
-        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MinRam ?? 4000, MaxRam ?? 2000);
+        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MaxRam ?? GameConfig.DefaultMaximumMemory, MinRam ?? GameConfig.DefaultMinimumMemory);
         var launcherObject = new LauncherConfig(game.Path ?? GameConfig.DefaultVersion);
         var user = new SessionInfo(Username ?? "Dev");
-        MinecraftLauncherService service = new(game, launcherObject, user ,_displayHandler);
+        MinecraftLauncherService service = new(game, launcherObject, user, _displayHandler);
 
         try
         {
@@ -155,10 +154,9 @@ public partial class MainViewModel : ObservableRecipient
         }
         else
         {
-            // `changer pour les versions déjà installer
             Versions =
             [
-                "1.21.4",
+                GameConfig.DefaultVersion,
             ];
         }
     }
