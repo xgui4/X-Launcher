@@ -1,14 +1,14 @@
 # X Launcher
 
-<image src="/X-Launcher.App/Assets/app-icon.ico">
+![Logo](X-Launcher.App/Assets/app-icon.ico)
 
-Un Minecraft®️ Launcher écrit en C#
+A Minecraft®️ Launcher written in C#
 
-Il suit le pattern MVVM (pour le GUI, pour le CLI c'est une partie de MVC/MVP) et est disponible en GUI ou en CLI.
+This project follow the MVVM patten.
 
-## Technologie/Librairie Utilié
+## Framework/Library used
 
-- Avalonia®️ UI <!-- Notice légale à ajouté -->
+- Avalonia®️ UI 
 
 - .NET 9
 
@@ -16,18 +16,22 @@ Il suit le pattern MVVM (pour le GUI, pour le CLI c'est une partie de MVC/MVP) e
 
 - Community Toolkit MVVM
 
-## Projets / Structure du programme
+## Project Structure
 
-- X-Launcher.Core : "Librairie" contenant les classes et méthodes communes et la logique de la connexion - Fonctionnelle pour une session hors-ligne
+- X-Launcher.Core : Dotnet library (an interface) containing the commune classes and method with login logic. 
 
-- X-Launcher.App : La logique et l'interface graphique - En pause de développement
+- X-Launcher.App : The code for the GUI / Desktop App
 
-- X-Launcher.Desktop : Boilerplate du framework pour l'interface graphique
+- X-Launcher.Desktop : Boilerplate code for the Desktop app 
 
-- X-Launcher.CLI : La version en ligne de commande - Fonctionnelle pour une session hors-ligne
+- X-Launcher.CLI : The code for the command line interface (CLI)
+
+- X-Launcher.CLI.Windows : Boilerplate code for enabling Windows specific code or function for the CLI 
 
 ### License : MIT
 
-### Mention légale :
+### Code of conduct :  [code-of-conduct.md](code-of-conduct.md)
+
+### Disclaimer :
 
  This is NOT AN OFFICIAL MINECRAFT [PRODUCT/SERVICE/EVENT/etc.]. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.

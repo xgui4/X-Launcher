@@ -1,31 +1,38 @@
-﻿Code of Respect (V3 – Apolitical Code of Conduct)
-Inclusivity
+﻿# Code of Respect (Apolitical CoC) V4
 
-Everyone is welcome to contribute regardless of identity, gender, ethnicity, religion, disability, neurodivergence, background, or personal beliefs — provided they act respectfully and follow these rules.
-Focus
+## This document contain important information about the rule of the project
 
-This project is about software.
+## Main goal 
+
+Making software, not doing political debate or activism, everyone is welcome.
+as long as you want to push the project forward and respect the goal amd rule
+of the project
+
+## Inclusivity and Professionalism
+
+### You are welcome 
+
+This mean you are to welcome to contribute and be a part of the community regardless 
+of your identity, sex/gender, ethnicity, religion, disability, neurodivergence, background,
+or personal beliefs or political view. Embrace natural diversity, including neurodiversity
+and disability. Treat others with respect and professionalism amd NSFW content is not allowed (except if authorized).
+
+## Focus
+
+This project is all about software and [FLOSS](https://www.gnu.org/philosophy/free-sw.html) (Free/Libre and Open Source Software)
 
 Contributions should focus on code, quality, and collaboration.
 
-This is not the place for political debate, activism, or propaganda.
-Professionalism
+## Explicitly forbidden Behavior
 
-Treat others with respect and professionalism.
-
-Embrace natural diversity, including neurodiversity and disability.
-
-NSFW content is not allowed.
-Behavior
-
-Harassment, bullying, intimidation, discrimination, or violent speech will not be tolerated.
+Harassment, bullying, intimidation, discrimination (including ableism, homophobia (and heterophobia), sexism (of both male or female) etc.), or violent speech will not be tolerated.
 
 Disruptive or disrespectful behavior may result in removal from the project.
-Enforcement
 
-If you see a violation of this Code, report it to the maintainers.
+## Enforcement
 
-Maintainers will review reports in good faith and may take appropriate action, up to and including removal from the community.
-Make Software Development Great Again.
+Due to be a hobby project by a student, I have no enforcement team (nor do I want one), you could create a issue on the GitHub of the project
 
-This code of respect is inspired by the No Code of Conduct
+## Make Software Development Great Again.
+
+This code of respect is inspired by the [No Code of Conduct](https://nocodeofconduct.com/)
