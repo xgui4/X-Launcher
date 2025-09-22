@@ -1,5 +1,5 @@
 ﻿using HtmlAgilityPack;
-using X_Launcher_CLI.ViewModels;
+using X_Launcher_Core.Model;
 using X_Launcher_Core.Utility;
 
 namespace X_Launcher_Core.Model;

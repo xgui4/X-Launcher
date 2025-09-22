@@ -1,4 +1,4 @@
-﻿namespace X_Launcher_CLI.ViewModels;
+﻿namespace X_Launcher_Core.Model;
 public enum Features
 {
     Play = 1,

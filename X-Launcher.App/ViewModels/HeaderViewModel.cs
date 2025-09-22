@@ -1,10 +1,9 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Handlers;
-using X_Launcher_CLI.ViewModels;
+using X_Launcher_Core.Model;
 using X_Launcher_Core;
 using X_Launcher_Core.Handlers;
-using X_Launcher_Core.Model;
 
 
 namespace X_Launcher.ViewModels;
@@ -16,7 +15,7 @@ public partial class HeaderViewModel(IDisplayHandler displayHandler) : Observabl
     public HeaderViewModel() : this(new GuiHandler())
     {
     }
-
+    
     [ObservableProperty]
     private string _title = ProductionContext.Product;
 
