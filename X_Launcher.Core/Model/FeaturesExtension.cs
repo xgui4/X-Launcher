@@ -14,7 +14,8 @@ public static class FeaturesExtension
             Features.Install => $"2. Install {(!InternetStatus.IsConnected() ? "\u001b[31m[Required Internet]\u001b[0m" : "")}",
             Features.SaveConfig => "3. Save Configuration",
             Features.Setting => "4. Setting",
-            Features.Quit => "5. Quit",
+            Features.Login => "5. Login",
+            Features.Quit => "6. Quit",
             _ => throw new ArgumentOutOfRangeException("This argument was out of bound!")
         };
     }

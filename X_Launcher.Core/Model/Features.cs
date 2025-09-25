@@ -5,5 +5,6 @@ public enum Features
     Install = 2,
     SaveConfig = 3,
     Setting = 4,
-    Quit = 5,
+    Login = 5,
+    Quit = 6,
 }

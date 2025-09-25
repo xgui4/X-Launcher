@@ -32,6 +32,10 @@
       <Compile Update="Views\HeaderView.axaml.cs">
         <DependentUpon>HeaderView.axaml</DependentUpon>
       </Compile>
+      <Compile Update="Views\SettingView.axaml.cs">
+        <DependentUpon>SettingView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

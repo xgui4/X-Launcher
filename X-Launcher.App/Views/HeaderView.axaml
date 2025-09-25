@@ -20,7 +20,9 @@
 			<Button Command="{Binding SetElement1Command}" Content="{Binding Element1}" />
 			<Button Command="{Binding SetElement2Command}" Content="{Binding Element2}" />
 			<Button Command="{Binding SetElement3Command}" Content="{Binding Element3}" />
-			<Button Command="{Binding SetElement3Command}" Content="{Binding Element4}" />
+			<Button Command="{Binding SetElement4Command}" Content="{Binding Element4}" />
+			<Button Command="{Binding SetElement5Command}" Content="{Binding Element5}" />
+
 		</StackPanel>
 		<Image Source="/Assets/placeholder.jpg"/>
 	</StackPanel>

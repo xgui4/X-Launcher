@@ -36,7 +36,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=C:\programmation\X-Launcher\LICENSE
 InfoBeforeFile=C:\programmation\X-Launcher\README.md
-InfoAfterFile=C:\programmation\X-Launcher\Code-of-conduct.rtf
+InfoAfterFile=C:\programmation\X-Launcher\code-of-conduct.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog

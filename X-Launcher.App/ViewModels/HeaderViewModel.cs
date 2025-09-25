@@ -30,6 +30,9 @@ public partial class HeaderViewModel(IDisplayHandler displayHandler) : Observabl
 
     [ObservableProperty] 
     private string? _element4 = FeaturesExtension.GetValue(Features.Setting);
+    
+    [ObservableProperty] 
+    private string? _element5 = FeaturesExtension.GetValue(Features.Login);
 
     [RelayCommand]
     private void SetElement1()
@@ -54,6 +57,13 @@ public partial class HeaderViewModel(IDisplayHandler displayHandler) : Observabl
 
     [RelayCommand]
     private void SetElement4()
+    {
+        _displayHandler ??= new GuiHandler();
+        _displayHandler.WarnAsync("Not implemented yet");
+    }
+    
+    [RelayCommand]
+    private void SetElement5()
     {
         _displayHandler ??= new GuiHandler();
         _displayHandler.WarnAsync("Not implemented yet");
