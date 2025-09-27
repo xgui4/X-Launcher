@@ -87,7 +87,7 @@ public partial class MainViewModel : ObservableRecipient
         return _launcher.SessionIsValid();
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanLaunch))]
     private async Task SetLauncher()
     {
         if (!_launcher.SessionIsValid())
