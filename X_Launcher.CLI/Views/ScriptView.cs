@@ -83,6 +83,10 @@ public class ScriptView
                     console.Refresh();
                     console.Info("Setting Option isn't implemented yet!");
                     break;
+                case Features.Login:
+                    console.Refresh();
+                    console.Info("Not Supported in Script Mode!");
+                    break; 
                 case Features.Quit:
                     console.Warn("Quit Option isn't usable in Script Mode!");
                     break;

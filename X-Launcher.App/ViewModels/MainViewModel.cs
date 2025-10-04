@@ -82,12 +82,14 @@ public partial class MainViewModel : ObservableRecipient
         }
     }
 
+    /*
     private bool CanLaunch()
     {
         return _launcher.SessionIsValid();
     }
+    */
 
-    [RelayCommand(CanExecute = nameof(CanLaunch))]
+    [RelayCommand /*(CanExecute = nameof(CanLaunch) ) */] // temporarily disabled for testing purposes due to no working correctly due to the can launch merthod not working correctly.
     private async Task SetLauncher()
     {
         if (!_launcher.SessionIsValid())
