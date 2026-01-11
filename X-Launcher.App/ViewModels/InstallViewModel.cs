@@ -1,40 +1,31 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using Handlers;
 using X_Launcher_Core.Handlers;
 using X_Launcher_Core.Model;
 using X_Launcher_Core.Service;
 using X_Launcher_Core.Utility;
 using X_Launcher.ViewModel;
 
-using Handlers;
-
 namespace X_Launcher.ViewModels;
 
-public partial class MainViewModel : ObservableRecipient
+public partial class InstallViewModel(IDisplayHandler displayHandler) : ObservableRecipient
 {
     private IDisplayHandler _displayHandler;
     private readonly MinecraftLauncherService _launcher;
 
-    public MainViewModel()
+    public InstallViewModel() : this(new GuiHandler())
     {
         _displayHandler = new GuiHandler();
         _launcher = new MinecraftLauncherService(_displayHandler);
         _ = InitializeComboBoxAsync();
     }
-    public MainViewModel(GuiHandler displayHandler)
-    {
-        _displayHandler = displayHandler;
-        _launcher = new MinecraftLauncherService(_displayHandler);
-        _ = InitializeComboBoxAsync();
-    }
 
     [ObservableProperty]
-    [NotifyCanExecuteChangedFor(nameof(LoginCommand))]
     private string? _username;
 
     [ObservableProperty]
@@ -52,45 +43,7 @@ public partial class MainViewModel : ObservableRecipient
     [ObservableProperty]
     private int? _maxRam;
 
-    [ObservableProperty]
-    private string? _loginLabel = "Login";
-
-    [ObservableProperty]
-    private string? _loginButtonColor = "Green";
-
-    [RelayCommand]
-    private async Task Login()
-    {
-        if (LoginLabel == "Login")
-        {
-            await _launcher.AuthenticateAsync();
-            await Task.Delay(1000);
-            if (_launcher.SessionIsValid())
-            {
-                LoginLabel = "Logout";
-                LoginButtonColor = "Red";
-                Messenger.Send(new LoginEvent(_launcher.GetMsName() ?? Username ?? "Undefined"));
-            }
-        }
-        else if (LoginLabel == "Logout")
-        {
-            await _launcher.LogoutAsync();
-            await Task.Delay(1000);
-            LoginLabel = "Login";
-            LoginButtonColor = "Green";
-            Messenger.Send(new LogoutEvent());
-        }
-    }
-
-    /*
-    private bool CanLaunch()
-    {
-        return _launcher.SessionIsValid();
-    }
-    */
-
-    [RelayCommand /*(CanExecute = nameof(CanLaunch) ) */] // temporarily disabled for testing purposes due to no working correctly due to the can launch merthod not working correctly.
-    private async Task SetLauncher()
+    [RelayCommand] private async Task SetInstaller()
     {
         if (!_launcher.SessionIsValid())
         {
@@ -112,25 +65,7 @@ public partial class MainViewModel : ObservableRecipient
             await _launcher.LaunchOfflineSessionAsync();
         }
     }
-
-    [RelayCommand()]
-    private async Task SetLauncherOffline()
-    {
-        var game = new GameConfig(SelectedVersion ?? GameConfig.DefaultVersion, LauncherPath ?? AppContext.BaseDirectory + "/.minecraft", MaxRam ?? GameConfig.DefaultMaximumMemory, MinRam ?? GameConfig.DefaultMinimumMemory);
-        var launcherObject = new LauncherConfig(game.Path ?? GameConfig.DefaultVersion);
-        var user = new SessionInfo(Username ?? "Dev");
-        MinecraftLauncherService service = new(game, launcherObject, user, _displayHandler);
-
-        try
-        {
-            await service.LaunchOfflineSessionAsync();
-        }
-        catch (Exception ex)
-        {
-            await _displayHandler.ErrorAsync(ex.ToString());
-        }
-    }
-
+    
     [RelayCommand]
     private void SearchLocally()
     {

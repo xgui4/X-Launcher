@@ -1,8 +1,8 @@
-﻿# Code of Respect (Apolitical CoC) V4
+﻿# Code of Respect
 
 ## This document contain important information about the rule of the project
 
-## Main goal 
+## Goal
 
 Making software, not doing political debate or activism, everyone is welcome.
 as long as you want to push the project forward and respect the goal amd rule
@@ -10,9 +10,9 @@ of the project
 
 ## Inclusivity and Professionalism
 
-### You are welcome 
+### You are welcome
 
-This mean you are to welcome to contribute and be a part of the community regardless 
+This mean you are to welcome to contribute and be a part of the community regardless
 of your identity, sex/gender, ethnicity, religion, disability, neurodivergence, background,
 or personal beliefs or political view. Embrace natural diversity, including neurodiversity
 and disability. Treat others with respect and professionalism amd NSFW content is not allowed (except if authorized).

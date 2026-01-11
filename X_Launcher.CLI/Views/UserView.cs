@@ -56,9 +56,13 @@ public class UserView
                         string? path = Console.ReadLine();
                         console.PrintNewLine("Choose a username : "); 
                         string username = Console.ReadLine() ?? "";
-                        console.PrintNewLine($"{username}, choose the name which the save be named (the .json is already automatically added) : ");
-                        string nameOfFile = Console.ReadLine() ?? "save.json";
-                        configSavingService.SaveConfig(new ConfigFile(new GameConfig(version, path), new LauncherConfig(), new SessionInfo(username)), nameOfFile + ".json");
+                        console.PrintNewLine($"{username}, choose the name which the save be named (the .xprofile is already automatically added) : ");
+                        string nameOfFile = Console.ReadLine() ?? "save.xprofile";
+                        configSavingService.SaveConfig(new ConfigFile(new GameConfig(version, path), new LauncherConfig(), new SessionInfo(username)), nameOfFile + ".xprofile");
+                        break;
+                    case Features.Login:
+                        console.Refresh();
+                        console.Info("Login View is not available yet!");
                         break;
                     case Features.Setting:
                         console.Refresh();

@@ -25,7 +25,7 @@ namespace X_Launcher_Core.Service
 
             var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };
             string configJson = JsonSerializer.Serialize(configFile, options);
-
+            
             string fullPath = Path.Combine(path, nameOfTheConfig);
 
             File.WriteAllText(fullPath, configJson); 

@@ -12,5 +12,5 @@ public static class ProductionContext
     public const string AppIdNotFound = "App ID not found";
     public static readonly string BuildDate = DateTime.Now.ToString().Replace(" ", "_");
     public static readonly string BuildNumber = BuildDate + "+" + Version;
-    public static readonly Uri RepositoryUri = new("https://github.com/xgui4/x-launcherConfig");
+    public static readonly Uri RepositoryUri = new("https://github.com/xgui4/X-launcher");
 }
