@@ -5,7 +5,7 @@
     x:Class="X_Launcher.Views.HeaderView"
     x:DataType="vm:HeaderViewModel"
     xmlns="https://github.com/avaloniaui"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:d="http://schemas.microsoft/Image>.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:X_Launcher.ViewModels"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
@@ -13,14 +13,17 @@
 	<StackPanel  
 		Margin="20"
         Spacing="10">
+		<Image Source="/Assets/app-icon.ico" Width="50" Height="50"></Image>
 		<TextBlock HorizontalAlignment="Center" Text="{Binding Title}" />
 
 		<StackPanel Orientation="Horizontal">
 			<Button Command="{Binding SetElement1Command}" Content="{Binding Element1}" />
 			<Button Command="{Binding SetElement2Command}" Content="{Binding Element2}" />
 			<Button Command="{Binding SetElement3Command}" Content="{Binding Element3}" />
-			<Button Command="{Binding SetElement3Command}" Content="{Binding Element4}" />
-		</StackPanel>
+			<Button Command="{Binding SetElement4Command}" Content="{Binding Element4}" />
+			<Button Command="{Binding SetElement5Command}" Content="{Binding Element5}" />
 
+		</StackPanel>
+		<Image Source="/Assets/placeholder.jpg"/>
 	</StackPanel>
 </UserControl>

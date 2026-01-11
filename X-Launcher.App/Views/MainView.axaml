@@ -66,6 +66,14 @@
                 HorizontalAlignment="Stretch"
                 HorizontalContentAlignment="Center"
                 x:Name="LauncherButton" />
+            
+            <Button
+                Background="Green"
+                Command="{Binding SetLauncherOfflineCommand}"
+                Content="Launch Minecraft (Offline)"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                x:Name="LauncherOfflineButton" />
 
         </StackPanel>
     </ScrollViewer>

@@ -19,8 +19,7 @@ public class DataSeeder
     /// <param name="element4"></param>
     /// <param name="element5"></param>
     /// <param name="element6"></param>
-    public DataSeeder(string element1, string element2, string element3, string element4, string element5,
-        string element6)
+    public DataSeeder(string element1, string element2, string element3, string element4, string element5, string element6)
     {
         _seed.Add(element1);
         _seed.Add(element2);

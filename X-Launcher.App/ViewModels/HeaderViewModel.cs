@@ -1,27 +1,21 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Handlers;
-using X_Launcher_CLI.ViewModels;
+using X_Launcher_Core.Model;
 using X_Launcher_Core;
 using X_Launcher_Core.Handlers;
-using X_Launcher_Core.Model;
 
 
 namespace X_Launcher.ViewModels;
 
-public partial class HeaderViewModel : ObservableRecipient
+public partial class HeaderViewModel(IDisplayHandler displayHandler) : ObservableRecipient
 {
-    private IDisplayHandler _displayHandler;
+    private IDisplayHandler _displayHandler = displayHandler;
 
-    public HeaderViewModel()
+    public HeaderViewModel() : this(new GuiHandler())
     {
-        _displayHandler = new GuiHandler();
     }
-    public HeaderViewModel(IDisplayHandler displayHandler)
-    {
-        _displayHandler = displayHandler;
-    }
-
+    
     [ObservableProperty]
     private string _title = ProductionContext.Product;
 
@@ -36,6 +30,9 @@ public partial class HeaderViewModel : ObservableRecipient
 
     [ObservableProperty] 
     private string? _element4 = FeaturesExtension.GetValue(Features.Setting);
+    
+    [ObservableProperty] 
+    private string? _element5 = FeaturesExtension.GetValue(Features.Login);
 
     [RelayCommand]
     private void SetElement1()
@@ -60,6 +57,13 @@ public partial class HeaderViewModel : ObservableRecipient
 
     [RelayCommand]
     private void SetElement4()
+    {
+        _displayHandler ??= new GuiHandler();
+        _displayHandler.WarnAsync("Not implemented yet");
+    }
+    
+    [RelayCommand]
+    private void SetElement5()
     {
         _displayHandler ??= new GuiHandler();
         _displayHandler.WarnAsync("Not implemented yet");

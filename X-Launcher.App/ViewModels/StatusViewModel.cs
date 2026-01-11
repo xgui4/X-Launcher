@@ -6,7 +6,7 @@ namespace X_Launcher.ViewModels;
 public partial class StatusViewModel : ObservableRecipient, IRecipient<LoginEvent>
 {
     [ObservableProperty]
-    private string _status = "Unregistred";
+    private string _status = "Unregistered";
 
     public StatusViewModel()
     {
@@ -20,7 +20,7 @@ public partial class StatusViewModel : ObservableRecipient, IRecipient<LoginEven
 
     public void Receive()
     {
-        Status = "Unregistred";
+        Status = "Unregistered";
     }
 }
 
