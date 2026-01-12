@@ -28,14 +28,14 @@ ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=C:\programmation\X-Launcher\LICENSE
-InfoBeforeFile=C:\programmation\X-Launcher\README.md
-InfoAfterFile=C:\programmation\X-Launcher\code-of-conduct.rtf
+LicenseFile=..\LICENSE
+InfoBeforeFile=..\README.md
+InfoAfterFile=..\code-of-conduct.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
 OutputBaseFilename=x-launcher-core
-SetupIconFile=C:\programmation\X-Launcher\X-Launcher.Desktop\app-icon.ico
+SetupIconFile=..\X-Launcher.Desktop\app-icon.ico
 SolidCompression=yes
 WizardStyle=modern
 
@@ -47,8 +47,8 @@ Name: "french"; MessagesFile: "compiler:Languages\French.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\programmation\X-Launcher\publish\windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\programmation\X-Launcher\publish\windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\publish\windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\X-Launcher\publish\windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
