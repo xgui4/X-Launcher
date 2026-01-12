@@ -1,6 +1,6 @@
 # X Launcher
 
-![Logo](X-Launcher.App/Assets/app-icon.ico)
+![Logo](assets/app-icon.ico)
 
 A Minecraft®️ Launcher written in C#
 
