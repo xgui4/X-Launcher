@@ -1,1 +1,7 @@
-## TBD
+# Changelog
+
+## New-FrontEnd : Started on 2026-0-12
+
+- Renamed a lot of project for consistency
+- New Project : `X_Launcher.GTK`
+- Renamed solution (.sln file) from `X-Launcher.sln` to `X_Launcher.sln`

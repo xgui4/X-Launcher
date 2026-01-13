@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>X-Launcher</AssemblyName>
+    <ApplicationIcon>app-icon.ico</ApplicationIcon>
+    <Company>Xgui4 Studio</Company>
+    <Authors>Xgui4</Authors>
+    <Product>X Launcher Core Desktop</Product>
+    <Copyright>(ɔ) Xgui4 Studio 2025</Copyright>
+    <GenerateDocumentationFile>False</GenerateDocumentationFile>
+    <ProduceReferenceAssembly>False</ProduceReferenceAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="app-icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Avalonia.Desktop" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\X-Launcher.App\X-Launcher.App.csproj" />
+  </ItemGroup>
+</Project>
