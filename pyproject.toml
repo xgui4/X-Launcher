@@ -1,0 +1,5 @@
+[project]
+name = "X Launcher Core App"
+
+[tool.pyside6-project]
+files = ["assets/app-icon.ico", "config.ini", "frontend/app.py", "frontend/en-ca.json", "frontend/fr-ca.json", "frontend/res.qrc", "frontend/translator.py"]
