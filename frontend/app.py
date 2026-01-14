@@ -25,6 +25,17 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(button)
 
+
+# Force X11 backend (disables Wayland attempts)
+os.environ["QT_QPA_PLATFORM"] = "xcb"
+
+# Trick KDE plugin into falling back to standard X11 tray protocols
+os.environ["KDE_FULL_SESSION"] = ""
+os.environ["XDG_CURRENT_DESKTOP"] = "XFCE"  # Using 'XFCE' or 'GNOME' forces XEmbed fallback
+
+# Disable the portal error causing the crash
+os.environ["QT_NO_XDG_DESKTOP_PORTAL"] = "1"
+
 def main():
     
     app = QApplication(sys.argv)
