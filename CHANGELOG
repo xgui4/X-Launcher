@@ -8,4 +8,4 @@
 - Added Locales at `locales` folder
 - New config file (`config.ini`)
 - Renamed solution (.sln file) from `X-Launcher.sln` to `X_Launcher.sln`
-- Laters : some minotrs bug fixed and better shebangs
+- Laters : some minors bug fixed and better shebangs
