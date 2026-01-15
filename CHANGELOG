@@ -1,0 +1,11 @@
+# Changelog
+
+## New-FrontEnd - 2026-01-14
+
+- Renamed a lot of project for consistency
+- Moved the old project to Legacy folder
+- New frontend on frontend in PySide6
+- Added Locales at `locales` folder
+- New config file (`config.ini`)
+- Renamed solution (.sln file) from `X-Launcher.sln` to `X_Launcher.sln`
+- Laters : some minors bug fixed and better shebangs
