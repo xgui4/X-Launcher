@@ -8,7 +8,7 @@ This project follow the MVVM patten.
 
 ## Framework/Library used
 
-- Avalonia®️ UI 
+- Avalonia®️ UI
 
 - .NET 9
 
@@ -16,22 +16,18 @@ This project follow the MVVM patten.
 
 - Community Toolkit MVVM
 
+- Python 3
+
+- Pyside6 (QT)
+
 ## Project Structure
 
-- X-Launcher.Core : Dotnet library (an interface) containing the commune classes and method with login logic. 
-
-- X-Launcher.App : The code for the GUI / Desktop App
-
-- X-Launcher.Desktop : Boilerplate code for the Desktop app 
-
-- X-Launcher.CLI : The code for the command line interface (CLI)
-
-- X-Launcher.CLI.Windows : Boilerplate code for enabling Windows specific code or function for the CLI 
+Being redone competely, this section will be rewritten soon.
 
 ### License : MIT
 
 ### Code of conduct :  [code-of-conduct.md](code-of-conduct.md)
 
-### Disclaimer :
+### Disclaimer
 
  This is NOT AN OFFICIAL MINECRAFT [PRODUCT/SERVICE/EVENT/etc.]. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.

@@ -1,0 +1,37 @@
+pkgname=X-Launcher-Core
+pkgver=git
+pkgrel=1
+pkgdesc="A Cross-Platform Minecraft Launcher"
+arch=('x86_64')
+url="https://github.com/xgui4/x-launcher-core"
+license=('MIT') 
+depends=(
+    'dotnet-runtime-9.0'
+    'python'
+    'pyside6'
+)
+makedepends=(
+    'dotnet-sdk-9.0'
+    'git'
+)
+source=('x-launcher-core::git+https://github.com/xgui4/x-launcher-core#branch=new-front-end')
+
+sha256sums=('SKIP')
+
+pkgver() {
+  cd "$pkgname"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}"
+  # To be determinated
+}
+
+package() {
+  install -Dm755 "${srcdir}/$pkgname/bin/start-x-launcher.py" "$pkgdir/usr/bin/start-x-launcher.py"
+  install -Dm755 "${srcdir}/$pkgname/pkg/hello-world-gtk-app.desktop" "$pkgdir/usr/share/applications/hello-world-gtk-app.desktop"
+  install -Dm644 "${srcdir}/$pkgname/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "${srcdir}/$pkgname/README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
+  install -Dm644 "${srcdir}/$pkgname/code-of-conduct.md" "$pkgdir/usr/share/doc/$pkgname/code-of-conduct.md"
+}

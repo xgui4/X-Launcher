@@ -1,5 +1,5 @@
 {
-  "name" :  "X Launcher Core",
+  "name" :  "x-launcher-core",
   "version" : "0.0.1~prealpha",
   "origin": "games/x-launcher-core",
   "comment" : "A Cross-platform FOSS Minecraft Launcher",
