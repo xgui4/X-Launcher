@@ -2,13 +2,13 @@
 
 ![Logo](assets/app-icon.ico)
 
-A Minecraft®️ Launcher written in C#
+A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside (Python/QT) for the Frontend
 
 This project follow the MVVM patten.
 
 ## Framework/Library used
 
-- Avalonia®️ UI
+- Avalonia®️ UI (for the legacy UI)
 
 - .NET 9
 
@@ -22,12 +22,27 @@ This project follow the MVVM patten.
 
 ## Project Structure
 
-Being redone competely, this section will be rewritten soon.
+- `assets/`
+  - Global Assets
+- `backend/`
+  - New Experimental Backend
+- `frontend/`
+  - New Experimental Frontend written in Python with Pyside6 (QT)
+- `legacy/`
+  - Old Avalonia and C# Console App
+- `locales/`
+  - localisations files for mutli-language supports
+- `pkg/`
+  - the packages formats for the mutltiples OS and Platform
+- project root
+  - (TBC)
 
-### License : MIT
+## Others Informationss
 
-### Code of conduct :  [code-of-conduct.md](code-of-conduct.md)
+License : MIT
 
-### Disclaimer
+Code of conduct :  [code-of-conduct.md](code-of-conduct.md)
 
- This is NOT AN OFFICIAL MINECRAFT [PRODUCT/SERVICE/EVENT/etc.]. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
+## Legal Disclaimer
+
+This is NOT AN OFFICIAL MINECRAFT [PRODUCT/SERVICE/EVENT/etc.]. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.
