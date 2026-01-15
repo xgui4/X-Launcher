@@ -1,0 +1,22 @@
+# Changelog
+
+## New-FrontEnd (prototype) - 2026-01-15
+
+- Renamed a lot of project for consistency
+- Moved the old project to Legacy folder
+- New frontend on frontend in PySide6
+- Added Locales at `locales` folder
+- New config file (`config.ini`) (not used currently)
+- Renamed solution (.sln file) from `X-Launcher.sln` to `X_Launcher.sln`
+- Some minors bug fixed and better shebangs
+- Added package build (arch package system) squeleton
+- Modified Windows Inno Setup File Script
+- Added start of manifest for freebsd support
+- Global Assets are now in `assets/`
+- Added `start-x-launcher-app.py`
+- Added Locales on `locales/` for the Qt Backend and 2 `.isl` (not used currently)
+- Started to modify the readme for the refactor/rewrite
+- Added `Directory.Packages.props
+- Added python project file (`pyproject.toml` and `requirements.txt`)
+- Updated the `.gitginore`
+- Updated the code of respect `code-of-conduct.md`
