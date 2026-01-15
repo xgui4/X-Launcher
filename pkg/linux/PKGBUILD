@@ -14,7 +14,7 @@ makedepends=(
     'dotnet-sdk-9.0'
     'git'
 )
-source=('x-launcher-core::git+https://github.com/xgui4/x-launcher-core#branch=new-front-end')
+source=('x-launcher-core::git+https://github.com/xgui4/x-launcher-core#branch=master')
 
 sha256sums=('SKIP')
 
