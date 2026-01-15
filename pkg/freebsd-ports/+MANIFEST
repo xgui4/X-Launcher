@@ -1,0 +1,25 @@
+{
+  "name" :  "X Launcher Core",
+  "version" : "0.0.1~prealpha",
+  "origin": "games/x-launcher-core",
+  "comment" : "A Cross-platform FOSS Minecraft Launcher",
+  "desc" : "A Cross-Platform FOSS Minecraft Launcher written in C# for the backend and python QT (Pyside6) for the backend",
+  "arch" : "amd64",
+  "www" : "https://www.github.com/xgui4/X-Launcher",
+  "maintainer" : "dev@exemple.com",
+  "prefix": "/usr/local",
+  "deps" : {
+    "python" : {
+      "origin" : "lang/python3",
+      "version" : ">=3.11"
+    },
+    "py311-pyside6": {
+      "origin": "devel/pyside6",
+      "version": ">=6.0"
+    },
+    "dotnet" : {
+      "version" : ">=9.0",
+      "orign" : "lang/dotnet"
+    }
+  }
+}

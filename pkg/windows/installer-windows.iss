@@ -28,8 +28,8 @@ ArchitecturesInstallIn64BitMode=x64compatible
 ChangesAssociations=yes
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-LicenseFile=..\..\LICENSE
-InfoBeforeFile=..\..\README.md
+LicenseFile=docs\LICENSE
+InfoBeforeFile=docs\README.md
 InfoAfterFile=docs\code-of-conduct.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest

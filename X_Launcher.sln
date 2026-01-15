@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI", "legacy\X_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Core", "legacy\X_Launcher.Core\X_Launcher.Core.csproj", "{AF09A687-341F-41B9-8A3E-EC86449518A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI.Windows", "legact\X_Launcher.CLI.Windows\X-Launcher.CLI.Windows.csproj", "{0581714B-D322-40A8-8FA3-DA0AF1634317}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI.Windows", "legacy\X_Launcher.CLI.Windows\X-Launcher.CLI.Windows.csproj", "{0581714B-D322-40A8-8FA3-DA0AF1634317}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{AF3A9C41-232C-4325-8EB3-FB26B24FB448}"
 	ProjectSection(SolutionItems) = preProject

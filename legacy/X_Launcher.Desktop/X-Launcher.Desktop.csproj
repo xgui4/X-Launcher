@@ -21,6 +21,6 @@
     <PackageReference Include="Avalonia.Desktop" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\X-Launcher.App\X-Launcher.App.csproj" />
+    <ProjectReference Include="..\X_Launcher.App\X_Launcher.App.csproj" />
   </ItemGroup>
 </Project>
