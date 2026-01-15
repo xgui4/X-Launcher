@@ -26,7 +26,25 @@ def main():
     if platform.system() == 'FreeBSD':
         sys_tray.set_theme_after_patch(app) 
             
-    tray = sys_tray.create_sys_tray(translator, app)
+    about_label = translator.translate("About SysTray")
+    about_qt_label = translator.translate("About SysTray") + " Qt"
+    quit_label = translator.translate("Quit SysTray")
+    tray_title = translator.translate("App Title")
+    tray_msg = translator.translate("Hello World")
+
+    tray = QSystemTrayIcon()
+    tray.setIcon(QIcon("/home/xgui4/develop/X-Launcher/assets/app-icon.ico"))
+    tray.setVisible(True)
+
+    menu = QMenu()
+    about_action = menu.addAction(about_label)
+    about_qt_action = menu.addAction(about_qt_label)
+
+    quit_action = menu.addAction(quit_label)
+    quit_action.triggered.connect(app.quit)
+    tray.setContextMenu(menu)
+
+    tray.showMessage(tray_title, tray_msg, QIcon("/home/xgui4/develop/X-Launcher/assets/app-icon.ico"))
         
     window = MainWindow(tray, translator)
     window.show()

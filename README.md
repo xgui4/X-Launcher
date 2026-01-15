@@ -2,7 +2,7 @@
 
 ![Logo](assets/app-icon.ico)
 
-A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside (Python/QT) for the Frontend
+A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside6 (Python/QT) for the frontend
 
 This project follow the MVVM patten.
 
