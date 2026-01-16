@@ -30,7 +30,7 @@ def main() -> None:
     window = MainWindow(tray, translator)
     window.show()
     
-    menu.connect_menu_to_systray(tray.quit_label, app, tray, window)
+    sys_tray.connect_menu_to_systray(menu, tray.quit_label, app, tray, window)
     tray.send_msg(tray.tray_title, tray.tray_msg, QIcon(os.path.join(utils.get_assets_dir() , "app-icon.ico")))
             
     def show_about():

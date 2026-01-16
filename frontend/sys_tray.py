@@ -29,16 +29,6 @@ class SysTrayMenu(QMenu):
         self.about_action = self.addAction(about_label)
         self.about_qt_action = self.addAction(about_qt_label)
         self.quit_action = None
-        
-    def connect_menu_to_systray(self, quit_label : str, app : QApplication, tray : SysTray, window : QWidget) -> None :
-        self.quit_action = self.addAction(quit_label)
-        self.quit_action.triggered.connect(app.quit)
-        self.toggle_action.triggered.connect(
-            lambda: 
-                window.hide() if window.isVisible() 
-                else window.show()
-        )
-        tray.setContextMenu(self)
     
     def connect_app_window_to_systray(self, show_about: Callable[[], None], show_about_qt: Callable[[], None]) -> None:
         self.about_action.triggered.connect(show_about)
@@ -63,3 +53,14 @@ class SysTray(QSystemTrayIcon) :
 
     def send_msg(self, title : str , msg : str, icon : QIcon):
         self.showMessage(title, msg, icon)
+        
+        
+def connect_menu_to_systray(menu : SysTrayMenu, quit_label : str, app : QApplication, tray : SysTray, window : QWidget) -> None :
+    menu.quit_action = menu.addAction(quit_label)
+    menu.quit_action.triggered.connect(app.quit)
+    menu.toggle_action.triggered.connect(
+        lambda: 
+            window.hide() if window.isVisible() 
+            else window.show()
+    )
+    tray.setContextMenu(menu)

@@ -39,4 +39,4 @@ class MainWindow(QMainWindow):
         
         central_widget.setLayout(layout)
         
-        self.setWindowFlags(Qt.Window | Qt.Tool)  # type: ignore
+        # self.setWindowFlags(Qt.Window | Qt.Tool)  # type: ignore
