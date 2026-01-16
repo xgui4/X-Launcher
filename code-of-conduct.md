@@ -1,4 +1,4 @@
-﻿# Code of Respect
+# Code of Respect
 
 ## This document contains important information about the rules of the project
 

@@ -17,7 +17,7 @@
 - Added French documentions and setting for the Windows Installer
 - Added `frontend/utils.py`a script used to create a file that contain the path (temporaly workaround)
 
-## New-FrontEnd (prototype) - 2026-01-16
+## New-FrontEnd (prototype) - 2026-01-15
 
 - Renamed a lot of project for consistency
 - Moved the old project to Legacy folder
