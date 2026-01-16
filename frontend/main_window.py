@@ -1,14 +1,17 @@
+import os
+import utils
+from typing import Optional 
+from PySide6.QtWidgets import  QWidget, QMainWindow, QPushButton, QSystemTrayIcon, QVBoxLayout, QLabel
+from PySide6.QtGui import QIcon, QPixmap
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QSystemTrayIcon, QMenu, QMessageBox, QSystemTrayIcon
-from PySide6.QtGui import QIcon
-import json_trans
+from json_trans import Translator
 
 class MainWindow(QMainWindow):
-    def __init__(self, tray, translator):
-        super().__init__()
+    def __init__(self, tray : QSystemTrayIcon, translator : Translator, parent : Optional[QWidget] = None):
+        super().__init__(parent)
         
-        window_title = translator.translate("App Title")
-        button_text = translator.translate("Main Button")
+        window_title : str = translator.translate("App Title")
+        button_text: str = translator.translate("Main Button")
         msg_body = translator.translate("Hello World")
 
         self.setWindowTitle(window_title)
@@ -17,7 +20,23 @@ class MainWindow(QMainWindow):
         button.clicked.connect(lambda: tray.showMessage(
             window_title, 
             msg_body, 
-            QIcon("/home/xgui4/develop/X-Launcher/assets/app-icon.ico")
+            QIcon(os.path.join(utils.get_assets_dir(), "app-icon.ico"))
         ))
+        
+        layout = QVBoxLayout(self)
+        
+        central_widget = QWidget()
 
-        self.setCentralWidget(button)
+        self.setCentralWidget(central_widget)
+        
+        layout.addWidget(button)
+        
+        image_widget = QLabel()
+        
+        image_widget.setPixmap(QPixmap(os.path.join(utils.get_assets_dir(), "placeholder.jpg")))
+        
+        layout.addWidget(image_widget)
+        
+        central_widget.setLayout(layout)
+        
+        self.setWindowFlags(Qt.Window | Qt.Tool)  # type: ignore

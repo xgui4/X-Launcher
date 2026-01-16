@@ -29,26 +29,26 @@ QT_APP = os.path.join(
 )
 
 
-def show_msgbox(title, msg):
+def show_msgbox(title : str, msg : str) -> None:
     root = tk.Tk()
     root.withdraw()
     messagebox.showinfo(title, msg)
     root.destroy()
 
 
-def run_dotnet(project_path):
+def run_dotnet(project_path : str) -> None:
     subprocess.run(
         ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
         check=True
     )
     
-def run_python(project_path):
+def run_python(project_path : str) -> None:
     subprocess.run(
         ["python", project_path],
         check=True
     )
 
-def main(): 
+def main() -> None: 
     print("Launching X Launcher Startup Script Pre-Alpha")
 
     user_input = input(

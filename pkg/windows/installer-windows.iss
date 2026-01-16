@@ -2,11 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "X Launcher Core"
-#define MyAppVersion "0.0.0.0.2"
+#define MyAppVersion "0.0.1-pre-alpha"
 #define MyAppPublisher "Xgui4 Studio"
 #define MyAppURL "https://www.github.com/xgui4/X-Launcher"
 #define MyAppExeName "X-Launcher.exe"
-#define MyAppAssocName MyAppName + " File"
+#define MyAppAssocName MyAppName + "Session File"
 #define MyAppAssocExt ".xprofile"
 #define MyAppAssocKey StringChange(MyAppAssocName, " ", "") + MyAppAssocExt
 
@@ -30,7 +30,7 @@ DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
 LicenseFile=..\..\LICENSE
 InfoBeforeFile=..\..\README.md
-InfoAfterFile=..\..\code-of-conduct.rtf
+InfoAfterFile=docs/code-of-conduct.rtf
 ; Uncomment the following line to run in non administrative install mode (install for current user only).
 ;PrivilegesRequired=lowest
 PrivilegesRequiredOverridesAllowed=dialog
@@ -40,15 +40,15 @@ SolidCompression=yes
 WizardStyle=modern
 
 [Languages]
-Name: "english"; MessagesFile: "compiler.english.isl"
-Name: "french"; MessagesFile: "compiler:french.isl"
+Name: "english"; MessagesFile: "compiler:default.isl"
+Name: "french"; MessagesFile: "compiler:language\french.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "..\..\publish\windows\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\..\X-Launcher\publish\windows\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
+Source: "..\..\target\start-x-launcher.py"; DestDir: "{app}";
+Source: "..\..\target\*"; DestDir: "{app}"; Flags: recursesubdirs createallsubdirs
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]

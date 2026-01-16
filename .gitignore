@@ -36,8 +36,8 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-target/
-pubish/
+**target/
+**pubish/
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
@@ -405,3 +405,4 @@ FodyWeavers.xsd
 *.sln.iml
 
 .qtcreator
+.vscode/settings.json

@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://taskfile.dev/schema.json
+
+version: '3'
+
+vars:
+  GREETING: Hello, world!
+
+tasks:
+  default:
+    desc: Print a greeting message
+    cmds:
+      - echo "{{.GREETING}}"
+    silent: true
+
+  build:
+    desc: Build the .net9.0 Solution
+    cmds:
+      - dotnet build legacy/X_Launcher.App/X_Launcher.App.csproj -c Release -o target/legacy/X_Launcher.App
+      - dotnet build legacy/X_Launcher.Desktop/X_Launcher.Desktop.csproj -c Release -o target/legacy/X_Launcher.Desktop
+      - dotnet build legacy/X_Launcher.CLI/X_Launcher.CLI.csproj -c Release -o target/legacy/X_Launcher.CLI
+      - dotnet build legacy/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/legacy/X_Launcher.Core
+      - dotnet build backend/X_Launcher.Core.Service/X_Launcher.Core.Service.csproj -c Release -o target/backend/X_Launcher.Core.Service
+      - cp start-x-launcher.py target/start-x-launcher.py
+      - cp -r frontend/*  target/frontend
