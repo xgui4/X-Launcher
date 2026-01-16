@@ -1,6 +1,23 @@
 # Changelog
 
-## New-FrontEnd (prototype) - 2026-01-15
+## New-FrontEnd (prototype 2) - 2026-01-16
+
+- Update the readme
+- Added a global.json file
+- Added a start of taskfile
+- A lot of minors new features/changes for the MSBUILD and solution file
+- Added a taskfile installer to get its latest version
+- Renamed `pkg/freebsd-ports` to `pkg/freebsd/`
+- `.gitignore` updated
+- now the project is configured to be launch and build on target/
+- Major changes to the frontends
+- Locales and assets from project roots to `frontend/assets` and `frontend/locales`
+- Removed the `english.isl`  in `pkg/windows/` since it is not needed
+- moved `pkg/windows/french.isl` in `pkg/windows/languages/french.isl`
+- Added French documentions and setting for the Windows Installer
+- Added `frontend/utils.py`a script used to create a file that contain the path (temporaly workaround)
+
+## New-FrontEnd (prototype) - 2026-01-16
 
 - Renamed a lot of project for consistency
 - Moved the old project to Legacy folder

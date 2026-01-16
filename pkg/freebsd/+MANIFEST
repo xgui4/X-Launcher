@@ -20,6 +20,10 @@
     "dotnet" : {
       "version" : ">=9.0",
       "orign" : "lang/dotnet"
+    },
+    "py-tkinter" : {
+      "version" : ">=3.11.14_11",
+      "origin" : "x11-toolkits/py-tkinter"
     }
   }
 }

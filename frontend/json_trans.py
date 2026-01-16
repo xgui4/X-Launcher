@@ -1,7 +1,7 @@
 import json
 import os
-from PySide6 import QtCore
-
+import utils
+from PySide6 import QtCore # type: ignore
 
 class Translator(QtCore.QObject):
 
@@ -9,15 +9,16 @@ class Translator(QtCore.QObject):
     
     FALLBACK_LANG = "en"
 
-    def __init__(self, selectedLang = FALLBACK_LANG):
+    def __init__(self, selectedLang : str = FALLBACK_LANG) -> None:
         super().__init__()
-        self._data = {}
-        self._current_lang = selectedLang
+        self._data : dict[str, str] = {}
+        self._current_lang : str = selectedLang
         self.load_lang(selectedLang)
 
-    def load_lang(self, lang_code):
-        """Loads a local JSON file (e.g., languages/en.json)"""
-        file_path = f"/home/xgui4/develop/X-Launcher/locales/{lang_code}.json"
+    def load_lang(self, lang_code : str):
+        """Loads a local JSON file (e.g., locales/en.json)"""
+        
+        file_path = f"{utils.get_locales_dir()}/{lang_code}.json"
 
         if not os.path.exists(file_path):
             print(f"Error: Language file {file_path} not found.")
@@ -31,6 +32,6 @@ class Translator(QtCore.QObject):
         except Exception as e:
             print(f"Error loading JSON: {e}")
 
-    def translate(self, key, default=""):
+    def translate(self, key : str, default : str ="") -> str:
         """Returns the translated string or the key itself if not found"""
         return self._data.get(key, default or key)

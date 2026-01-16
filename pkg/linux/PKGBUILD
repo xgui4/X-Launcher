@@ -9,6 +9,7 @@ depends=(
     'dotnet-runtime-9.0'
     'python'
     'pyside6'
+    'tk'
 )
 makedepends=(
     'dotnet-sdk-9.0'

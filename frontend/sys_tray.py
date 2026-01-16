@@ -1,11 +1,11 @@
-import sys
 import os
-import json_trans
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QMainWindow, QPushButton, QSystemTrayIcon, QMenu, QMessageBox, QSystemTrayIcon
+from typing import Callable, Optional 
+from PySide6.QtWidgets import QWidget, QApplication, QSystemTrayIcon, QMenu
 from PySide6.QtGui import QIcon
+import utils
+from json_trans import Translator
 
-def patch_freebsd_sys_tray():
+def patch_freebsd_sys_tray() -> None :
     ''' Specific Patch for FreeBSD'''
     # Force X11 backend (disables Wayland attempts)
     os.environ["QT_QPA_PLATFORM"] = "xcb"
@@ -18,27 +18,48 @@ def patch_freebsd_sys_tray():
     os.environ["QT_NO_XDG_DESKTOP_PORTAL"] = "1"
 
 
-def set_theme_after_patch(app : QApplication):
+def set_theme_after_patch(app : QApplication) -> None:
     app.setStyle("breeze")
     
-
-def create_sys_tray(translator, app):
-    about_label = translator.translate("About SysTray")
-    about_qt_label = translator.translate("About SysTray") + " Qt"
-    quit_label = translator.translate("Quit SysTray")
-    tray_title = translator.translate("App Title") 
-    tray_msg = translator.translate("Hello World")  
-
-    tray = QSystemTrayIcon()
-    tray.setIcon(QIcon("/home/xgui4/develop/X-Launcher/assets/app-icon.ico"))
-    tray.setVisible(True)
-
-    menu = QMenu()
-    about_action = menu.addAction(about_label)
-    about_qt_action = menu.addAction(about_qt_label)
+    
+class SysTrayMenu(QMenu): 
+    def __init__(self,toggle_label : str, about_label : str, about_qt_label : str , parent : Optional[QWidget] = None) -> None :
+        super().__init__(parent)
+        self.toggle_action = self.addAction(toggle_label)
+        self.about_action = self.addAction(about_label)
+        self.about_qt_action = self.addAction(about_qt_label)
+        self.quit_action = None
         
-    quit_action = menu.addAction(quit_label)
-    quit_action.triggered.connect(app.quit)
-    tray.setContextMenu(menu)
+    def connect_menu_to_systray(self, quit_label : str, app : QApplication, tray : SysTray, window : QWidget) -> None :
+        self.quit_action = self.addAction(quit_label)
+        self.quit_action.triggered.connect(app.quit)
+        self.toggle_action.triggered.connect(
+            lambda: 
+                window.hide() if window.isVisible() 
+                else window.show()
+        )
+        tray.setContextMenu(self)
+    
+    def connect_app_window_to_systray(self, show_about: Callable[[], None], show_about_qt: Callable[[], None]) -> None:
+        self.about_action.triggered.connect(show_about)
+        self.about_qt_action.triggered.connect(show_about_qt)
+    
+    
+class SysTray(QSystemTrayIcon) :
+    def __init__(self, translator : Translator, parent: Optional[QWidget] = None):
+        super().__init__(parent)
+        self.about_label = translator.translate("About SysTray")
+        self.about_qt_label = f"{self.about_label} Qt"
+        self.quit_label = translator.translate("Quit SysTray")
+        self.tray_title = translator.translate("App Title") 
+        self.tray_msg = translator.translate("Hello World")   
+        self.setIcon(QIcon(os.path.join(utils.get_assets_dir(), "app-icon.ico")))
+        self.setVisible(True)
 
-    tray.showMessage(tray_title, tray_msg, QIcon("/home/xgui4/develop/X-Launcher/assets/app-icon.ico"))
+
+    def create_sys_tray(self, menu : SysTrayMenu, app : QApplication, window : QWidget):
+        menu.connect_menu_to_systray(self.quit_label, app, self, window) 
+     
+
+    def send_msg(self, title : str , msg : str, icon : QIcon):
+        self.showMessage(title, msg, icon)
