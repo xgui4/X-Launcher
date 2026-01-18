@@ -14,6 +14,7 @@
     <PackageVersion Include="CmlLib.Core.Installer.Forge" Version="1.1.0" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.0" />
     <PackageVersion Include="MessageBox.Avalonia" Version="3.2.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="9.0.10" />
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="9.0.10" />
     <PackageVersion Include="Microsoft.Web.WebView2" Version="1.0.3530-prerelease" />
     <PackageVersion Include="XboxAuthNet.Game.Msal" Version="0.1.2" />

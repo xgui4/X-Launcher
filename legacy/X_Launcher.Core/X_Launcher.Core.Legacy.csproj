@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>X_Launcher_Core</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="CmlLib.Core" />
+    <PackageReference Include="CmlLib.Core.Auth.Microsoft" />
+    <PackageReference Include="CmlLib.Core.Bedrock.Auth" />
+    <PackageReference Include="CmlLib.Core.Installer.Forge" />
+    <PackageReference Include="Microsoft.Web.WebView2" />
+    <PackageReference Include="XboxAuthNet.Game.Msal" />
+  </ItemGroup>
+</Project>

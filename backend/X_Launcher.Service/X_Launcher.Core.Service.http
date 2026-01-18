@@ -1,0 +1,6 @@
+@X_Launcher.Core.Service_HostAddress = http://localhost:5277
+
+GET {{X_Launcher.Core.Service_HostAddress}}/x_launcher.core.service/
+Accept: application/json
+
+###

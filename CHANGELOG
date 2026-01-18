@@ -1,6 +1,6 @@
 # Changelog
 
-## New-FrontEnd (prototype 2) - 2026-01-16
+## New-FrontEnd (prototype 2) - started at 2026-01-16 ended on 2026-01-18
 
 - Update the readme
 - Added a global.json file
@@ -16,6 +16,7 @@
 - moved `pkg/windows/french.isl` in `pkg/windows/languages/french.isl`
 - Added French documentions and setting for the Windows Installer
 - Added `frontend/utils.py`a script used to create a file that contain the path (temporaly workaround)
+- Added the legacy backend as a based for the new backend and renamed the old backend as `X_Launcher.Core.Legacy`
 
 ## New-FrontEnd (prototype) - 2026-01-15
 
