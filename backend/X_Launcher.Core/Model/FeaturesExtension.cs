@@ -1,6 +1,4 @@
-﻿using HtmlAgilityPack;
-using X_Launcher_Core.Model;
-using X_Launcher_Core.Utility;
+﻿using X_Launcher_Core.Handlers;
 
 namespace X_Launcher_Core.Model;
 
@@ -11,7 +9,7 @@ public static class FeaturesExtension
         return action switch
         {
             Features.Play => "1. Play",
-            Features.Install => $"2. Install {(!InternetStatus.IsConnected() ? "\u001b[31m[Required Internet]\u001b[0m" : "")}",
+            Features.Install => $"2. Install {(!InternetStatus.IsConnected() ? "\e[31m[Required Internet]\e[0m" : "")}",
             Features.SaveConfig => "3. Save Configuration",
             Features.Setting => "4. Setting",
             Features.Login => "5. Login",
@@ -19,4 +17,5 @@ public static class FeaturesExtension
             _ => throw new ArgumentOutOfRangeException("This argument was out of bound!")
         };
     }
+    
 }

@@ -6,7 +6,7 @@ public class GameConfig
 {
     public const int DefaultMaximumMemory = 4000;
     public const int DefaultMinimumMemory = 0;
-    public const string DefaultVersion = "1.21.4"; // temp 
+    public const string DefaultVersion = "1.21.4"; 
     private static readonly string DefaultMinecraftPath = MinecraftPath.GetOSDefaultPath();
     public Guid Id { get; private set; }
     public string? Version { get; private set; }
@@ -15,10 +15,7 @@ public class GameConfig
     public string? Server { get; private set; }
     public int? MaxMemory { get; private set; }
     public int? MinMemory { get; private set; }
-
-    /// <summary>
-    ///     Empty Constructor
-    /// </summary>
+    
     public GameConfig()
     {
         Id = Guid.NewGuid();

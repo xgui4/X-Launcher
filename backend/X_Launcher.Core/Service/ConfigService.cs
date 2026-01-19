@@ -19,14 +19,15 @@ namespace X_Launcher_Core.Service
         }
         public void SaveConfig(ConfigFile configFile, string nameOfTheConfig)
         {
-            string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "X-Launcher", "saves");
+            
+            var path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "X-Launcher", "saves");
 
             if (!Directory.Exists(path)) Directory.CreateDirectory(path);
 
             var options = new JsonSerializerOptions { WriteIndented = true, IncludeFields = true };
-            string configJson = JsonSerializer.Serialize(configFile, options);
+            var configJson = JsonSerializer.Serialize(configFile, options);
             
-            string fullPath = Path.Combine(path, nameOfTheConfig);
+            var fullPath = Path.Combine(path, nameOfTheConfig);
 
             File.WriteAllText(fullPath, configJson); 
 

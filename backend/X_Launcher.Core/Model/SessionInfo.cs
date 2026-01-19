@@ -1,43 +1,21 @@
-﻿using System.Security.Cryptography;
-using System.Text;
+﻿namespace X_Launcher_Core.Model;
 
-public class SessionInfo
+public class SessionInfo(string name = "Dev", string minecraftEmailAccount = "demo", string? minecraftPassword = null)
 {
-    public Guid Id { get; private set; }
-    public string? Name { get; private set; }
-
-    /*
-    public string? MicrosoftEmailAccount { get; private set; }
-    public string? HashedPassword { get; private set; }
-    */
-    
-    public SessionInfo()
-    {
-        Id = Guid.NewGuid();
-        Name = "Dev"; // temps
-    }
-
-    public SessionInfo(string name /*, string microsoftEmailAccount, string password */)
-    {
-        Id = Guid.NewGuid();
-        Name = name;
-        // MicrosoftEmailAccount = microsoftEmailAccount;
-        // HashedPassword = HashPassword(password);
-    }
-
-    /* 
-    private static string HashPassword(string password)
-    {
-       to be re-created later
-    }
-    */
-
-    public void FillUserInfo(string name, string microsoftEmailAccount, string password)
+    public Guid Id { get; private set; } = Guid.NewGuid();
+    public string Name { get; private set; } = name;
+    public string MicrosoftEmailAccount { get; private set; } = minecraftEmailAccount;
+    public string? HashedPassword { get; private set; } = minecraftPassword != null ? HashPassword(minecraftPassword) : null;
+    public void UpdateUserInfo(string name, string microsoftEmailAccount, string password)
     {
         Name = name;
-        /*
         MicrosoftEmailAccount = microsoftEmailAccount;
         HashedPassword = HashPassword(password);
-        */
     }
+    
+    private static string HashPassword(string password)
+    {
+        return password;
+    }
+
 }
