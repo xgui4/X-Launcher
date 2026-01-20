@@ -1,17 +1,28 @@
 [project]
-name = "X Launcher Core App"
+name = "X-Launcher-Core-App"
+version = "0.0.1"
+description = "A Cross-Platform Minecraft Launcher Frontend written in Python 3 with Pyside 6"
+dependencies = [
+    "PySide6>=6.0.0",
+    "requests>=2.32.5",
+]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["src"]
 
 [tool.pyside6-project]
-files = 
-[
+files = [
     "assets/app-icon.ico",
-    "frontend/app.py", 
-    "frontend/assets/app-icon.ico",
-    "frontend/assets/placeholder.jpg",
-    "frontend/locales/en.json", 
-    "frontend/locales/fr.json", 
-    "frontend/json_trans.py",
-    "frontend/main_window.py",
-    "start-x-launcher.py",
-    "requirement.txt"
+    "src/app.py",
+    "src/assets/app-icon.ico",
+    "src/assets/placeholder.jpg",
+    "src/locales/en.json",
+    "sfc/locales/fr.json",
+    "srd/json_trans.py",
+    "src/main_window.py",
+    "start-x-launcher.py"
 ]

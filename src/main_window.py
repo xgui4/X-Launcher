@@ -1,10 +1,13 @@
 import os
-import utils
-from typing import Optional 
-from PySide6.QtWidgets import  QWidget, QMainWindow, QPushButton, QSystemTrayIcon, QVBoxLayout, QLabel
+from typing import Optional
+
 from PySide6.QtGui import QIcon, QPixmap
-from PySide6.QtCore import Qt
+from PySide6.QtWidgets import QWidget, QMainWindow, QPushButton, QSystemTrayIcon, QVBoxLayout, QLabel
+
+import utils
+import core_connector
 from json_trans import Translator
+
 
 class MainWindow(QMainWindow):
     def __init__(self, tray : QSystemTrayIcon, translator : Translator, parent : Optional[QWidget] = None):
@@ -16,10 +19,10 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle(window_title)
         button = QPushButton(button_text)
-        
+                
         button.clicked.connect(lambda: tray.showMessage(
-            window_title, 
-            msg_body, 
+            window_title,
+            core_connector.connect_to_server(), 
             QIcon(os.path.join(utils.get_assets_dir(), "app-icon.ico"))
         ))
         

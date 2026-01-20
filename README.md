@@ -29,7 +29,7 @@ This project follow the MVVM patten.
 - `backend/`
   - `X_Launcher.Core.Service/`
     - New Experimental Backend
-- `frontend/`
+- `src/`
   - New Experimental Frontend written in Python with Pyside6 (QT)
 - `legacy/`
   - Old Avalonia and C# Console App

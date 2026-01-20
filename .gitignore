@@ -404,5 +404,16 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
+# QT project 
 .qtcreator
+
+# Vscode 
 .vscode/settings.json
+
+# pythom venv
+.venv/
+/X_Launcher_Core_App.egg-info/dependency_links.txt
+/X_Launcher_Core_App.egg-info/PKG-INFO
+/X_Launcher_Core_App.egg-info/requires.txt
+/X_Launcher_Core_App.egg-info/SOURCES.txt
+/X_Launcher_Core_App.egg-info/top_level.txt

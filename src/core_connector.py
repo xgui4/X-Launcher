@@ -3,7 +3,7 @@ import json
 
 API_URL = "http://localhost:5277/x_launcher.core.service" 
 
-def connect_to_server(): 
+def connect_to_server() -> str: 
     try:
         response = requests.get(API_URL)
 
@@ -12,11 +12,8 @@ def connect_to_server():
 
         # Parse the response data, typically JSON
         data = response.json()
-        print("Data received from ASP.NET server:")
-        print(json.dumps(data, indent=4))
+        return json.dumps(data, indent=4)
 
     except requests.exceptions.RequestException as e:
         # Handle any errors during the request
-        print(f"Error connecting to the server: {e}")
-
-connect_to_server() 
+        return f"Error connecting to the server: {e}"
