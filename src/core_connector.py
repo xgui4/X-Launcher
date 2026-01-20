@@ -11,7 +11,7 @@ def connect_to_server() -> str:
         response.raise_for_status()
 
         # Parse the response data, typically JSON
-        data = response.json()
+        data: str = response.json()  # pyright: ignore[reportAny]
         return json.dumps(data, indent=4)
 
     except requests.exceptions.RequestException as e:

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
+import os
 import subprocess
 import sys
-import os
-from PySide6.QtWidgets import QApplication, QMessageBox, QPushButton
+from tkinter import messagebox
 
 PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
 
@@ -35,40 +35,29 @@ BACKEND = os.path.join(
 )
 
 def show_msgbox(title : str, msg : str) -> None:
-    messageBox = QMessageBox()
-    messageBox.setInformativeText(title)
-    messageBox.setText(msg)
-
-msgBox = QMessageBox()
-msgBox.setText("The document has been modified.")
-msgBox.setInformativeText("Do you want to save your changes?")
-msgBox.setStandardButtons(QMessageBox.Save | QMessageBox.Discard | QMessageBox.StandardButton.Cancel)
-msgBox.setDefaultButton(QMessageBox.Save)
-ret = msgBox.exec()
-
-
+    _NULL= messagebox.showinfo(title, msg)
 
 def run_dotnet(project_path : str) -> None:
-    subprocess.run(
+    print(subprocess.run(
         ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
         check=True
-    )
+    ))
 
 def run_python(project_path : str) -> None:
-    subprocess.run(
+    print(subprocess.run(
         ["python", project_path],
         check=True
-    )
+    ))
 
 def run_python_parallel(project_path : str) -> None:
-    subprocess.Popen(
+    print(subprocess.Popen(
         ["python", project_path],
-    )
+    ))
 
 def run_dotnet_parallel(project_path : str) -> None:
-    subprocess.Popen(
+    print(subprocess.Popen(
         ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
-    )
+    ))
 
 def main() -> None:
     print("Launching X Launcher Startup Script Pre-Alpha")

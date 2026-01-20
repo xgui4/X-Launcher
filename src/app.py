@@ -24,7 +24,7 @@ def main() -> None:
     if platform.system() in ['FreeBSD', 'GhostBSD']:
         sys_tray.set_theme_after_patch(app)
 
-    QApplication.setStyle("breeze")
+    _NULL= QApplication.setStyle("breeze")
 
     tray = sys_tray.SysTray(translator)
     menu = sys_tray.SysTrayMenu("Toogle", tray.about_label, tray.about_qt_label)

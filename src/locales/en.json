@@ -1,7 +1,7 @@
 {
-    "App Title" : "X Launcher Core QT",
+    "App Title" : "X Launcher Core QT", 
     "Main Button" : "Launch Minecraft",
-    "Hello World" : "Hello World",
+    "Message From Launcher!" : "Message From Launcher",
     "About SysTray" : "About",
     "Quit SysTray" : "Quit"
 }

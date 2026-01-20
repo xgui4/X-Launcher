@@ -6,21 +6,38 @@ A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and
 
 This project follow the MVVM patten.
 
-## Framework/Library used
+## Framework, Library and tools used
 
-- C# Backend
-  - .NET 9
-  - CmlLib
+- ASP.NET Core backend
+  - C# (.NET 9)
+  - CmlLib (interface implemented in X_Launcher.Core)
+
+- Avalonia UI (legacy frontend)
+  - C# (.NET 9)
   - Community Toolkit MVVM
+  - May not receive future update and may be removed in the offical release
 
-- Legacy Frontend
-  - Avalonia®️ UI (for the legacy UI)
-  - .NET 9
-  - C#
+- Legacy .NET Console CLI
+  - C# (.NET 9)
+  - Windows version with a easier sign-in feature 
+  - May not receive future update
 
 - QT Frontend
-  - Python 3
-  - Pyside6 (QT)
+  - Python 3.10+
+  - Pyside6
+  - JSON Locale
+    - easily extensible by creating json file with "key" and "value"
+
+- Automation toos
+  - UV (optional)
+    - only work on Windows or Linux or MacOS since QT does not release QT binary for BSD in PyPi
+  - Taskfile
+    - create automation task for packaging and developpement (wip)
+
+- IDE
+  - VSCode
+  - Jetbrain Rider
+  - QT Creator
 
 ## Project Structure
 
@@ -55,6 +72,22 @@ This project follow the MVVM patten.
     - Files related to packaging/porting to FreeBSD
 - project root
   - docs, config and projects file for both the backend and frontend
+
+## Platform supported
+
+- Windows (only tested the old frontend)
+- GNU/Linux (Tested on EndeavourOS (based on Arch BTW))
+- *BSD (Only FreeBSD/GhostBSD tested so far)
+- MacOS (technically would work but I offer no support for it since I do not own a Mac)
+
+## Packaging 
+  - TBD
+
+## Contributions 
+  - TBD
+
+## Support/Moderation
+  - TB
 
 ## Others Informationss
 

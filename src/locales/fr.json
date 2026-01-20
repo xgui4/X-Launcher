@@ -1,7 +1,7 @@
 {
     "App Title" : "X Launcher Core QT",
     "Main Button" : "Lancer Minecraft",
-    "Hello World" : "Salut le monde!",
+    "Message From Launcher!" : "Message du lanceur",
     "About SysTray" : "À Propos de",
     "Quit SysTray" : "Quitter"
 }

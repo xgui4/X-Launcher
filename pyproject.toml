@@ -14,6 +14,10 @@ build-backend = "setuptools.build_meta"
 [tool.setuptools]
 packages = ["src"]
 
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+
 [tool.pyside6-project]
 files = [
     "assets/app-icon.ico",

@@ -1,13 +1,13 @@
 import json
 import os
 import utils
-from PySide6 import QtCore # type: ignore
+from PySide6 import QtCore # type: ignore  # pyright: ignore[reportMissingTypeStubs]
 
 class Translator(QtCore.QObject):
 
-    languageChanged = QtCore.Signal()  # Signal QT about the language changes
+    languageChanged: QtCore.Signal = QtCore.Signal()  # Signal QT about the language changes
     
-    FALLBACK_LANG = "en"
+    FALLBACK_LANG: str = "en"
 
     def __init__(self, selectedLang : str = FALLBACK_LANG) -> None:
         super().__init__()

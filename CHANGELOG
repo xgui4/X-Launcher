@@ -1,5 +1,21 @@
 # Changelog
 
+## New-FrontEnd (prototype 2)- develop branch - 2026/01/20
+
+- fixed scripts
+- updatd the readme 
+- fixed some bugs
+- updated the locales
+- implemented a start of loggin for scripts
+- fixed start-legacy launcher 
+- updated pyproject.toml 
+- updated UV automatically 
+- code refactoring plus aware to pyright
+
+## New-FrontEnd (prototype 2)- develop branch - 2026/01/19 - commit 2
+
+- replce install.taskfile with setup.py
+
 ## New-FrontEnd (prototype 2)- develop branch - 2026/01/19
 
 - Beginning the refactor of the core backend.
