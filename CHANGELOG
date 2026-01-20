@@ -1,5 +1,9 @@
 # Changelog
 
+## New-FrontEnd (prototype 2)- develop branch - 2026/01/19 - commit 2
+
+- replce install.taskfile with setup.py
+
 ## New-FrontEnd (prototype 2)- develop branch - 2026/01/19
 
 - Beginning the refactor of the core backend.
