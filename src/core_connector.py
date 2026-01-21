@@ -1,19 +1,20 @@
-import requests
 import json
 
-API_URL = "http://localhost:5277/x_launcher.core.service" 
+import requests
+from requests.exceptions import RequestException
+from requests.models import Response
 
-def connect_to_server() -> str: 
+API_URL = "http://localhost:5277/x_launcher.core.service"
+
+
+def connect_to_server() -> str:
     try:
-        response = requests.get(API_URL)
+        response: Response = requests.get(url=API_URL)
 
-        # Check if the request was successful (status code 200-299)
         response.raise_for_status()
 
-        # Parse the response data, typically JSON
-        data: str = response.json()  # pyright: ignore[reportAny]
-        return json.dumps(data, indent=4)
+        data: str = response.json()
+        return json.dumps(obj=data, indent=4)
 
-    except requests.exceptions.RequestException as e:
-        # Handle any errors during the request
-        return f"Error connecting to the server: {e}"
+    except RequestException as err:
+        return f"Error connecting to the server: {err}"

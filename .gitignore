@@ -420,3 +420,7 @@ FodyWeavers.xsd
 
 # bsd file
 *.core
+
+# server generated files
+
+backend/X_Launcher.Service/versions/version_manifest_v2.json

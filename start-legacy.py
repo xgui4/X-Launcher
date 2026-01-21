@@ -1,68 +1,65 @@
 #!/usr/bin/env python3
-
 import os
 import subprocess
 import sys
 from tkinter import messagebox
 
-PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+import utils
 
-CLI_PROJECT = os.path.join(
-    PROJECT_DIR,
-    "legacy",
-    "X_Launcher.CLI",
-    "X_Launcher.CLI.csproj"
+PROJECT_DIR: str = utils.get_project_root()
+
+CLI_PROJECT: str = os.path.join(
+    PROJECT_DIR, "legacy", "X_Launcher.CLI", "X_Launcher.CLI.csproj"
 )
 
-DESKTOP_PROJECT = os.path.join(
-    PROJECT_DIR,
-    "legacy",
-    "X_Launcher.Desktop",
-    "X_Launcher.Desktop.csproj"
+DESKTOP_PROJECT: str = os.path.join(
+    PROJECT_DIR, "legacy", "X_Launcher.Desktop", "X_Launcher.Desktop.csproj"
 )
 
-QT_APP = os.path.join(
-    PROJECT_DIR,
-    "frontend",
-    "app.py"
+QT_APP: str = os.path.join(PROJECT_DIR, "frontend", "app.py")
+
+BACKEND: str = os.path.join(
+    PROJECT_DIR, "backend", "X_Launcher.Service", "X_Launcher.Service.csproj"
 )
 
-BACKEND = os.path.join(
-    PROJECT_DIR,
-    "backend",
-    "X_Launcher.Service",
-    "X_Launcher.Service.csproj"
-)
 
-def show_msgbox(title : str, msg : str) -> None:
-    _NULL= messagebox.showinfo(title, msg)
+def show_msgbox(title: str, msg: str) -> None:
+    _NULL: str = messagebox.showinfo(title, message=msg)
 
-def run_dotnet(project_path : str) -> None:
-    print(subprocess.run(
-        ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
-        check=True
-    ))
 
-def run_python(project_path : str) -> None:
-    print(subprocess.run(
-        ["python", project_path],
-        check=True
-    ))
+def run_dotnet(project_path: str) -> None:
+    print(
+        subprocess.run(
+            ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
+            check=True,
+        )
+    )
 
-def run_python_parallel(project_path : str) -> None:
-    print(subprocess.Popen(
-        ["python", project_path],
-    ))
 
-def run_dotnet_parallel(project_path : str) -> None:
-    print(subprocess.Popen(
-        ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
-    ))
+def run_python(project_path: str) -> None:
+    print(subprocess.run(["python", project_path], check=True))
+
+
+def run_python_parallel(project_path: str) -> None:
+    print(
+        subprocess.Popen(
+            ["python", project_path],
+        )
+    )
+
+
+def run_dotnet_parallel(project_path: str) -> None:
+    print(
+        subprocess.Popen(
+            ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
+        )
+    )
+
 
 def main() -> None:
     print("Launching X Launcher Startup Script Pre-Alpha")
 
-    user_input = input(
+    user_input: str = input(
         """
         Choose an option:
         1. Launch X Launcher CLI (LEGACY)
@@ -72,19 +69,20 @@ def main() -> None:
     ).strip()
 
     if user_input == "1":
-        run_dotnet(CLI_PROJECT)
+        run_dotnet(project_path=CLI_PROJECT)
 
     elif user_input == "2":
-        run_dotnet(DESKTOP_PROJECT)
+        run_dotnet(project_path=DESKTOP_PROJECT)
 
     elif user_input == "3":
-        show_msgbox("X Launcher Startup Script", "Work in progress")
-        run_python_parallel(QT_APP)
-        run_dotnet_parallel(BACKEND)
+        show_msgbox(title="X Launcher Startup Script", msg="Work in progress")
+        run_python_parallel(project_path=QT_APP)
+        run_dotnet_parallel(project_path=BACKEND)
 
     else:
         print("Invalid option.")
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()

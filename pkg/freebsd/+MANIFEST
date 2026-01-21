@@ -24,6 +24,10 @@
     "py-tkinter" : {
       "version" : ">=3.11.14_11",
       "origin" : "x11-toolkits/py-tkinter"
+    },
+    "py311-platformdirs" : {
+      "version": "4.0.0",
+      "origin ": "devel/py-platformdirs"
     }
   }
 }

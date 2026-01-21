@@ -1,65 +1,93 @@
 #!/usr/bin/env python3
-import subprocess
+
 import os
-import logging
 from subprocess import Popen
 
-PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+from loggers import BasicLogger
+import utils
 
-QT_APP = os.path.join(
-    PROJECT_DIR,
-    "src",
-    "app.py"
+PROJECT_DIR: str = utils.get_project_root()
+
+FRONTEND_FOLDER: str = "src"
+QT_APP_EXE: str = "app.py"
+
+BACKEND_FOLDER: str = "backend"
+BACKEND_PROJECT_FOLDER: str = "X_Launcher.Service"
+BACKEND_PROJECT_FILE: str = "X_Launcher.Service.csproj"
+
+DOTNET_FRAMEWORK: str = "net-9.0"
+
+QT_APP: str = os.path.join(PROJECT_DIR, FRONTEND_FOLDER, QT_APP_EXE)
+
+BACKEND: str = os.path.join(
+    PROJECT_DIR, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE
 )
 
-BACKEND = os.path.join(
-    PROJECT_DIR,
-    "backend",
-    "X_Launcher.Service",
-    "X_Launcher.Service.csproj"
-)
-def run_python_parallel(project_path : str) -> Popen[bytes]:
-    return subprocess.Popen(
-        ["python", project_path],
+NO_ERROR: str = "None"
+
+
+def run_python_parallel(project_path: str) -> Popen[bytes]:
+    python_exe: str = "python"
+    return Popen[bytes](
+        [python_exe, project_path],
     )
 
-def run_dotnet_parallel(project_path : str) -> Popen[bytes]:
-    return subprocess.Popen(
-        ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
+
+def run_dotnet_parallel(project_path: str) -> Popen[bytes]:
+    dotnet_exe: str = "dotnet"
+    dotnet_option_str: str = "run"
+    framework_option_str: str = "--framwework"
+    project_option_str: str = "--project"
+    return Popen[bytes](
+        [
+            dotnet_exe,
+            dotnet_option_str,
+            framework_option_str,
+            DOTNET_FRAMEWORK,
+            project_option_str,
+            project_path,
+        ],
     )
 
-def main() -> None: 
-    # Configure logging to write to 'app.log'
-    # The default filemode is 'a' (append), so new logs are added to the end
-    logging.basicConfig(
-        filename='laucher.log',
-        level=logging.INFO, # Log messages with severity INFO or higher
-        format='%(asctime)s - %(levelname)s - %(message)s' # Format the log messages
-    )
+
+def main() -> None:
+    logger: BasicLogger = BasicLogger()
+
+    frontend_name: str = "X Launcher Core QT App"
+    backend_name: str = "X Launcher Service"
+
+    exit_no_error_str: str = "Exited without any issue"
+    exit_with_code_str: str = "Exited with Code"
 
     print("Launching X Launcher Startup Script Pre-Alpha")
-    p1 = run_python_parallel(QT_APP)
-    p2 = run_dotnet_parallel(BACKEND)
-    
-    # This reads output AND waits for the process to exit
+
+    p1: Popen[bytes] = run_python_parallel(project_path=QT_APP)
+    p2: Popen[bytes] = run_dotnet_parallel(project_path=BACKEND)
+
     stdout1, stderr1 = p1.communicate()
-    
-    logging.info(msg=f"frontend : {stdout1}")
-    logging.error(msg=f"frontend : {stderr1}")
-    
+
+    if str(stdout1) != NO_ERROR:
+        logger.info(msg=f"{frontend_name} : {stdout1}")
+    if str(stderr1) != NO_ERROR:
+        logger.error(msg=f"{frontend_name}: {stderr1}")
+    else:
+        logger.info(msg=f"{frontend_name} {exit_no_error_str}")
+
     stdout2, stderr2 = p2.communicate()
-    
-    logging.info(msg=f"backend : {stdout2}")
-    logging.error(msg=f"backend : {stderr2}")
-    
-    frontend_exit_code:int = p1.returncode
-    
-    logging.info(f"frontend : {frontend_exit_code}")
-    
-    backend_exit_code:int = p2.returncode
-    
-    logging.info(f"backend :  {backend_exit_code}")
-    
+
+    if str(stdout2) != NO_ERROR:
+        logger.info(msg=f"{backend_name} : {stdout2}")
+    if str(stderr2) != NO_ERROR:
+        logger.error(msg=f"{backend_name} : {stderr2}")
+    else:
+        logger.info(msg=f"{backend_name} {exit_no_error_str}")
+
+    frontend_exit_code: int = p1.returncode
+    logger.info(msg=f"{frontend_name} {exit_with_code_str}: {frontend_exit_code}")
+
+    backend_exit_code: int = p2.returncode
+    logger.info(msg=f"{backend_name} {exit_with_code_str}:  {backend_exit_code}")
+
 
 if __name__ == "__main__":
     main()

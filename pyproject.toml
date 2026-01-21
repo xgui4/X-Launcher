@@ -3,9 +3,9 @@ name = "X-Launcher-Core-App"
 version = "0.0.1"
 description = "A Cross-Platform Minecraft Launcher Frontend written in Python 3 with Pyside 6"
 dependencies = [
-    "PySide6>=6.0.0",
-    "requests>=2.32.5",
-]
+    "PySide6>=6.0.0", 
+    "requests>=2.32.5", 
+    "platformdirs>=4.5.1"]
 
 [build-system]
 requires = ["setuptools"]
@@ -17,6 +17,9 @@ packages = ["src"]
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
+reportAny = false
+reportExplicitAny = false
+reportMissingTypeStubs = false
 
 [tool.pyside6-project]
 files = [
@@ -28,5 +31,5 @@ files = [
     "sfc/locales/fr.json",
     "srd/json_trans.py",
     "src/main_window.py",
-    "start-x-launcher.py"
+    "start-x-launcher.py",
 ]

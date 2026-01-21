@@ -41,13 +41,17 @@ This project follow the MVVM patten.
 
 ## Project Structure
 
-- `assets/`
-  - Global Assets
+- `.*`
+  - config files for IDE
 - `backend/`
   - `X_Launcher.Core.Service/`
-    - New Experimental Backend
+    - New Experime  ntal Backend
 - `src/`
   - New Experimental Frontend written in Python with Pyside6 (QT)
+    - `assets`
+      - assets for the pyside 6 frontend
+    - `locales`
+      - locales files for pyside 6 frontend
 - `legacy/`
   - Old Avalonia and C# Console App
   - `X-Launcher.Core/`
@@ -60,8 +64,6 @@ This project follow the MVVM patten.
     - The code for the command line interface (CLI)
   - `X-Launcher.CLI.Windows/`
     - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
-- `locales/`
-  - localisations files for mutli-language supports
 - `pkg/`
   - the packages formats for the mutltiples OS and Platform
   - `windows/`
@@ -80,6 +82,9 @@ This project follow the MVVM patten.
 - *BSD (Only FreeBSD/GhostBSD tested so far)
 - MacOS (technically would work but I offer no support for it since I do not own a Mac)
 
+## Running from Source Code
+  - TBD
+
 ## Packaging 
   - TBD
 
@@ -93,7 +98,7 @@ This project follow the MVVM patten.
 
 License : MIT
 
-Code of conduct :  [code-of-conduct.md](code-of-conduct.md)
+Code of conduct : [code-of-conduct.md](code-of-conduct.md)
 
 ## Legal Disclaimer
 
