@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
+
 import os
 import subprocess
 import sys
 from tkinter import messagebox
 
-import utils
+import src.utils
+
+STARTUP_STR: str = "Launching X Launcher Startup Script Pre-Alpha"
+
+MENU_STR: str ="""
+        Choose an option:
+        1. Launch X Launcher CLI (LEGACY)
+        2. Launch X Launcher Desktop (LEGACY)
+        3. Quit
+        > """
 
 PROJECT_DIR: str = utils.get_project_root()
 
@@ -16,7 +26,7 @@ DESKTOP_PROJECT: str = os.path.join(
     PROJECT_DIR, "legacy", "X_Launcher.Desktop", "X_Launcher.Desktop.csproj"
 )
 
-QT_APP: str = os.path.join(PROJECT_DIR, "frontend", "app.py")
+QT_APP: str = os.path.join(PROJECT_DIR, "src", "app.py")
 
 BACKEND: str = os.path.join(
     PROJECT_DIR, "backend", "X_Launcher.Service", "X_Launcher.Service.csproj"
@@ -57,15 +67,10 @@ def run_dotnet_parallel(project_path: str) -> None:
 
 
 def main() -> None:
-    print("Launching X Launcher Startup Script Pre-Alpha")
+    print(STARTUP_STR)
 
     user_input: str = input(
-        """
-        Choose an option:
-        1. Launch X Launcher CLI (LEGACY)
-        2. Launch X Launcher Desktop (LEGACY)
-        3. [Coming Soon] Launch X Launcher QT (Experimental Core)
-        > """
+        MENU_STR
     ).strip()
 
     if user_input == "1":
@@ -75,9 +80,7 @@ def main() -> None:
         run_dotnet(project_path=DESKTOP_PROJECT)
 
     elif user_input == "3":
-        show_msgbox(title="X Launcher Startup Script", msg="Work in progress")
-        run_python_parallel(project_path=QT_APP)
-        run_dotnet_parallel(project_path=BACKEND)
+        exit()
 
     else:
         print("Invalid option.")

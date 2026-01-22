@@ -3,10 +3,10 @@
 import os
 from subprocess import Popen
 
-from loggers import BasicLogger
-import utils
+import src.loggers
+import src.utils
 
-PROJECT_DIR: str = utils.get_project_root()
+PROJECT_DIR: str = src.utils.get_project_root()
 
 FRONTEND_FOLDER: str = "src"
 QT_APP_EXE: str = "app.py"
@@ -51,7 +51,7 @@ def run_dotnet_parallel(project_path: str) -> Popen[bytes]:
 
 
 def main() -> None:
-    logger: BasicLogger = BasicLogger()
+    logger: src.loggers.BasicLogger = src.loggers.BasicLogger()
 
     frontend_name: str = "X Launcher Core QT App"
     backend_name: str = "X Launcher Service"
@@ -76,7 +76,7 @@ def main() -> None:
     stdout2, stderr2 = p2.communicate()
 
     if str(stdout2) != NO_ERROR:
-        logger.info(msg=f"{backend_name} : {stdout2}")
+       logger.info(msg=f"{backend_name} : {stdout2}")
     if str(stderr2) != NO_ERROR:
         logger.error(msg=f"{backend_name} : {stderr2}")
     else:
