@@ -3,12 +3,13 @@
 import os
 from subprocess import Popen
 
-import src.loggers
-import src.utils
+from src.frontend import loggers
+from src.frontend import utils
 
-PROJECT_DIR: str = src.utils.get_project_root()
+PROJECT_DIR: str = utils.get_project_root()
 
-FRONTEND_FOLDER: str = "src"
+SRC_FOLDER: str = "src"
+FRONTEND_FOLDER: str = "frontend"
 QT_APP_EXE: str = "app.py"
 
 BACKEND_FOLDER: str = "backend"
@@ -17,10 +18,10 @@ BACKEND_PROJECT_FILE: str = "X_Launcher.Service.csproj"
 
 DOTNET_FRAMEWORK: str = "net-9.0"
 
-QT_APP: str = os.path.join(PROJECT_DIR, FRONTEND_FOLDER, QT_APP_EXE)
+QT_APP: str = os.path.join(PROJECT_DIR, SRC_FOLDER ,FRONTEND_FOLDER, QT_APP_EXE)
 
 BACKEND: str = os.path.join(
-    PROJECT_DIR, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE
+    PROJECT_DIR, SRC_FOLDER, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE
 )
 
 NO_ERROR: str = "None"
@@ -51,7 +52,7 @@ def run_dotnet_parallel(project_path: str) -> Popen[bytes]:
 
 
 def main() -> None:
-    logger: src.loggers.BasicLogger = src.loggers.BasicLogger()
+    logger: loggers.BasicLogger = loggers.BasicLogger()
 
     frontend_name: str = "X Launcher Core QT App"
     backend_name: str = "X Launcher Service"

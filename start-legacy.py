@@ -5,7 +5,7 @@ import subprocess
 import sys
 from tkinter import messagebox
 
-import src.utils
+from src.frontend import utils
 
 STARTUP_STR: str = "Launching X Launcher Startup Script Pre-Alpha"
 
@@ -19,17 +19,15 @@ MENU_STR: str ="""
 PROJECT_DIR: str = utils.get_project_root()
 
 CLI_PROJECT: str = os.path.join(
-    PROJECT_DIR, "legacy", "X_Launcher.CLI", "X_Launcher.CLI.csproj"
+    PROJECT_DIR, "src", "legacy", "X_Launcher.CLI", "X_Launcher.CLI.csproj"
 )
 
 DESKTOP_PROJECT: str = os.path.join(
-    PROJECT_DIR, "legacy", "X_Launcher.Desktop", "X_Launcher.Desktop.csproj"
+    PROJECT_DIR, "src", "legacy", "X_Launcher.Desktop", "X_Launcher.Desktop.csproj"
 )
 
-QT_APP: str = os.path.join(PROJECT_DIR, "src", "app.py")
-
 BACKEND: str = os.path.join(
-    PROJECT_DIR, "backend", "X_Launcher.Service", "X_Launcher.Service.csproj"
+    PROJECT_DIR, "src", "backend", "X_Launcher.Service", "X_Launcher.Service.csproj"
 )
 
 

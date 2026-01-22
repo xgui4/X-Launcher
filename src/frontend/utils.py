@@ -8,12 +8,12 @@ def get_frontend_dir() -> str:
 
 def get_project_root() -> str:
     dir: Path = Path(get_frontend_dir())
-    return str(dir.parent)
+    return str((dir.parent.parent))
 
 
 def get_locales_dir() -> str:
-    return os.path.join(get_frontend_dir(), "locales")
+    return os.path.join(get_project_root(), "locales")
 
 
 def get_assets_dir() -> str:
-    return os.path.join(get_frontend_dir(), "assets")
+    return os.path.join(get_project_root(), "assets")
