@@ -20,6 +20,7 @@ venv = ".venv"
 reportAny = false
 reportExplicitAny = false
 reportMissingTypeStubs = false
+reportImplicitRelativeImport = false
 
 [tool.pyside6-project]
 files = [

@@ -7,7 +7,7 @@ import sys
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMessageBox, QStyle, QSystemTrayIcon
 
-from json_trans import Translator
+from json_trans import Translator  # pyright: ignore[reportImplicitRelativeImport]
 import json_trans
 from main_window import MainWindow
 from sys_tray import SysTray, SysTrayMenu

@@ -1,6 +1,6 @@
 # X Launcher Core
 
-![Logo](assets/app-icon.ico)
+![Logo](assets/banner.png)
 
 A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside6 (Python/QT) for the frontend
 
@@ -28,7 +28,7 @@ This project follow the MVVM patten.
   - JSON Locale
     - easily extensible by creating json file with "key" and "value"
 
-- Automation toos
+- Automation tools
   - UV (optional)
     - only work on Windows or Linux or MacOS since QT does not release QT binary for BSD in PyPi
   - Taskfile
@@ -53,15 +53,15 @@ This project follow the MVVM patten.
       - Experimental backend logic
   - `legacy/`
     - Old Avalonia and C# Console App
-    - `X-Launcher.Core/`
+    - `X_Launcher.Core/`
       - Dotnet library (an interface) containing the commune classes and method with login logic.
-    - `X-Launcher.App/`
+    - `X_Launcher.App/`
       - The code for the GUI / Desktop App
-    - `X-Launcher.Desktop/`
+    - `X_Launcher.Desktop/`
       - Boilerplate and runnable code for the Desktop app
-    - `X-Launcher.CLI/`
+    - `X_Launcher.CLI/`
       - The code for the command line interface (CLI)
-    - `X-Launcher.CLI.Windows/`
+    - `X_Launcher.CLI.Windows/`
       - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
   - `frontend/`
      - New Experimental Frontend written in Python with Pyside6 (QT)

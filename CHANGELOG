@@ -4,6 +4,7 @@
 - modified the project structure and the code associated
 - the readme will be updated next commit 
 Second commit -> Update the README
+Third commit -> update the README again and `pyproject.toml` and new assets (`banner.png`)
 
 ## Fixed some bugs of imports + better legacy launcher- develop branch - 2026/01/21 - 21:21
 

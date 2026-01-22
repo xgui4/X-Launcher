@@ -10,9 +10,9 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-import core_connector
-from json_trans import Translator
-import utils
+import core_connector 
+from json_trans import Translator 
+import utils 
 
 
 class MainWindow(QMainWindow):
@@ -41,6 +41,14 @@ class MainWindow(QMainWindow):
         central_widget: QWidget = QWidget()
 
         self.setCentralWidget(central_widget)
+
+        banner_widget: QLabel = QLabel()
+
+        banner_widget.setPixmap(
+            QPixmap(os.path.join(utils.get_assets_dir(), "banner.png"))
+        )
+
+        layout.addWidget(banner_widget)
 
         layout.addWidget(button)
 
