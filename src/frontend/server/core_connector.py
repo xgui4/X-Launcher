@@ -6,7 +6,6 @@ from requests.models import Response
 
 API_URL = "http://localhost:5277/x_launcher.core.service"
 
-
 def connect_to_server() -> str:
     try:
         response: Response = requests.get(url=API_URL)

@@ -10,9 +10,9 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-import core_connector 
-from json_trans import Translator 
-import utils 
+import server.core_connector as core_connector
+from utils.json_trans import Translator 
+import utils.utils as utils 
 
 
 class MainWindow(QMainWindow):

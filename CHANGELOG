@@ -1,5 +1,9 @@
 # Changelog
 
+## Restructure the python frontent
+- Refactor the pyhon code with packages and python package `__init__.py`
+- Updated the launcher with this new structure in mind
+
 ## Start of the new structure
 - modified the project structure and the code associated
 - the readme will be updated next commit 

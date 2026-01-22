@@ -3,8 +3,8 @@
 import os
 from subprocess import Popen
 
-from src.frontend import loggers
-from src.frontend import utils
+from src.frontend.utils import loggers
+from src.frontend.utils import utils
 
 PROJECT_DIR: str = utils.get_project_root()
 
@@ -18,7 +18,7 @@ BACKEND_PROJECT_FILE: str = "X_Launcher.Service.csproj"
 
 DOTNET_FRAMEWORK: str = "net-9.0"
 
-QT_APP: str = os.path.join(PROJECT_DIR, SRC_FOLDER ,FRONTEND_FOLDER, QT_APP_EXE)
+QT_APP: str = os.path.join(PROJECT_DIR, SRC_FOLDER, FRONTEND_FOLDER, QT_APP_EXE)
 
 BACKEND: str = os.path.join(
     PROJECT_DIR, SRC_FOLDER, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE

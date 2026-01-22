@@ -7,12 +7,11 @@ import sys
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMessageBox, QStyle, QSystemTrayIcon
 
-from json_trans import Translator  # pyright: ignore[reportImplicitRelativeImport]
-import json_trans
-from main_window import MainWindow
-from sys_tray import SysTray, SysTrayMenu
-import sys_tray
-import utils
+from utils.json_trans import Translator
+from ui.main_window import MainWindow
+import ui.sys_tray  as sys_tray
+from ui.sys_tray import SysTray, SysTrayMenu
+import utils.utils as utils
 
 # System-specific patches for BSD in 2026
 if platform.system() in ["FreeBSD", "GhostBSD"]:
@@ -25,7 +24,7 @@ def main() -> None:
     if QSystemTrayIcon.isSystemTrayAvailable():
         app.setQuitOnLastWindowClosed(False)
 
-    translator: Translator = json_trans.Translator(selectedLang="fr")
+    translator: Translator = Translator(selectedLang="fr")
 
     if platform.system() in ["FreeBSD", "GhostBSD"]:
         sys_tray.set_theme_after_patch(app)

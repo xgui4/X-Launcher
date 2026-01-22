@@ -5,7 +5,7 @@ import subprocess
 import sys
 from tkinter import messagebox
 
-from src.frontend import utils
+from src.frontend.utils import utils
 
 STARTUP_STR: str = "Launching X Launcher Startup Script Pre-Alpha"
 
