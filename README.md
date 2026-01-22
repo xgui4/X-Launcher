@@ -41,29 +41,30 @@ This project follow the MVVM patten.
 
 ## Project Structure
 
-- `.*`
-  - config files for IDE
-- `backend/`
-  - `X_Launcher.Core.Service/`
-    - New Experime  ntal Backend
+- `assets`
+  - assets for the pyside 6 frontend
+- `locales`
+    - locales files for pyside 6 frontend
 - `src/`
-  - New Experimental Frontend written in Python with Pyside6 (QT)
-    - `assets`
-      - assets for the pyside 6 frontend
-    - `locales`
-      - locales files for pyside 6 frontend
-- `legacy/`
-  - Old Avalonia and C# Console App
-  - `X-Launcher.Core/`
-    - Dotnet library (an interface) containing the commune classes and method with login logic.
-  - `X-Launcher.App/`
-    - The code for the GUI / Desktop App
-  - `X-Launcher.Desktop/`
-    - Boilerplate and runnable code for the Desktop app
-  - `X-Launcher.CLI/`
-    - The code for the command line interface (CLI)
-  - `X-Launcher.CLI.Windows/`
-    - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
+  - `backend/`
+    - `X_Launcher.Service/`
+      - New Experimental Backend Server Service
+    - `X_Launcher.Core`
+      - Experimental backend logic
+  - `legacy/`
+    - Old Avalonia and C# Console App
+    - `X-Launcher.Core/`
+      - Dotnet library (an interface) containing the commune classes and method with login logic.
+    - `X-Launcher.App/`
+      - The code for the GUI / Desktop App
+    - `X-Launcher.Desktop/`
+      - Boilerplate and runnable code for the Desktop app
+    - `X-Launcher.CLI/`
+      - The code for the command line interface (CLI)
+    - `X-Launcher.CLI.Windows/`
+      - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
+  - `frontend/`
+     - New Experimental Frontend written in Python with Pyside6 (QT)
 - `pkg/`
   - the packages formats for the mutltiples OS and Platform
   - `windows/`
@@ -83,22 +84,22 @@ This project follow the MVVM patten.
 - MacOS (technically would work but I offer no support for it since I do not own a Mac)
 
 ## Running from Source Code
-  - TBD
+  - Run `./start-x-launcher.py` to lauch the frontend and backend with a logging service 
+  - Run `./start-legacy.py` to get a CLI menu to launch old legacy version
 
 ## Packaging 
-  - TBD
+  - Guide will come in the first stable release
 
 ## Contributions 
-  - TBD
+  - Guide will come in the first stable release
 
 ## Support/Moderation
-  - TB
+  - Code of conduct : [code-of-conduct.md](code-of-conduct.md)
+  - Support will come in the first stable release
 
-## Others Informationss
+## License
 
 License : MIT
-
-Code of conduct : [code-of-conduct.md](code-of-conduct.md)
 
 ## Legal Disclaimer
 
