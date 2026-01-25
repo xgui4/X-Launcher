@@ -19,7 +19,7 @@ This project follow the MVVM patten.
 
 - Legacy .NET Console CLI
   - C# (.NET 9)
-  - Windows version with a easier sign-in feature 
+  - Windows version with a easier sign-in feature
   - May not receive future update
 
 - QT Frontend
@@ -44,7 +44,7 @@ This project follow the MVVM patten.
 - `assets`
   - assets for the pyside 6 frontend
 - `locales`
-    - locales files for pyside 6 frontend
+  - locales files for pyside 6 frontend
 - `src/`
   - `backend/`
     - `X_Launcher.Service/`
@@ -64,7 +64,7 @@ This project follow the MVVM patten.
     - `X_Launcher.CLI.Windows/`
       - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
   - `frontend/`
-     - New Experimental Frontend written in Python with Pyside6 (QT)
+    - New Experimental Frontend written in Python with Pyside6 (QT)
 - `pkg/`
   - the packages formats for the mutltiples OS and Platform
   - `windows/`
@@ -84,18 +84,22 @@ This project follow the MVVM patten.
 - MacOS (technically would work but I offer no support for it since I do not own a Mac)
 
 ## Running from Source Code
-  - Run `./start-x-launcher.py` to lauch the frontend and backend with a logging service 
-  - Run `./start-legacy.py` to get a CLI menu to launch old legacy version
 
-## Packaging 
-  - Guide will come in the first stable release
+- Run `./start-x-launcher.py` to lauch the frontend and backend with a logging service
+- Run `./start-legacy.py` to get a CLI menu to launch old legacy version
+
+## Packaging
+
+- Guide will come in the first stable release
 
 ## Contributions 
-  - Guide will come in the first stable release
+
+- Guide will come in the first stable release
 
 ## Support/Moderation
-  - Code of conduct : [code-of-conduct.md](code-of-conduct.md)
-  - Support will come in the first stable release
+
+- Code of conduct : [code-of-conduct.md](code-of-conduct.md)
+- Support will come in the first stable release
 
 ## License
 
