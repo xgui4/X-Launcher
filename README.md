@@ -4,8 +4,6 @@
 
 A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside6 (Python/QT) for the frontend
 
-This project follow the MVVM patten.
-
 ## Framework, Library and tools used
 
 - ASP.NET Core backend
@@ -92,7 +90,7 @@ This project follow the MVVM patten.
 
 - Guide will come in the first stable release
 
-## Contributions 
+## Contributions
 
 - Guide will come in the first stable release
 

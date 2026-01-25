@@ -1,11 +1,10 @@
-﻿using CmlLib.Core;
+﻿using System.Threading.Tasks;
+using CmlLib.Core;
 using CmlLib.Core.Auth;
 using CmlLib.Core.Auth.Microsoft;
 using CmlLib.Core.ProcessBuilder;
 using CmlLib.Core.VersionLoader;
 using CmlLib.Core.VersionMetadata;
-using Microsoft.Extensions.Logging;
-using System.Runtime.CompilerServices;
 using X_Launcher_Core.Exception;
 using X_Launcher_Core.Handlers;
 using X_Launcher_Core.Model;
@@ -180,6 +179,21 @@ public class MinecraftLauncherService
         {
             await _displayHandler.ErrorAsync(ex.Message);
         }
+    }
+
+    public async Task LaunchDemo(string username = "demo")
+    {
+        var launcher = new MinecraftLauncher();
+
+        await launcher.InstallAsync("1.21.1");
+
+        var launchOption = new MLaunchOption
+        {
+            Session = MSession.CreateOfflineSession(username),
+            IsDemo = true
+        };
+
+        await launcher.BuildProcessAsync("1.21.1", launchOption); 
     }
 
     public async Task LaunchOfflineSessionAsync()

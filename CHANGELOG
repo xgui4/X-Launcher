@@ -1,6 +1,15 @@
 # Changelog
 
-## January 25 2026
+## January 25 2026 - 15:00
+
+- Updated the `.gitignore`
+- Update the Launcher Service
+- Update the Launcher Core
+- Add a demo launcher
+- Updated the README
+- Remove versions files
+
+## January 25 2026 - 12:37
 
 - Removed UV.lock since It is not used and won't work propely on FreeBSD due to Pyside6 binary not existing in pip for FreeBSD
 - Removed setup.py since it was not really needed

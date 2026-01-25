@@ -14,7 +14,8 @@ public class SessionInfo(string name = "Dev", string minecraftEmailAccount = "de
     }
     
     private static string HashPassword(string password)
-    {
+    {   
+        // Todo -> Hashed the password
         return password;
     }
 
