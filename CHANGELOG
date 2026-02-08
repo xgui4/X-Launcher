@@ -1,5 +1,8 @@
 # Changelog
 
+## Feb 8 : 
+new wip setup.py file, updated wip taskfile file , re add uv.lock and remove old  run file (cause it is now obselete and will need full reworked)
+
 ## January 25 2026 - 15:00
 
 - Updated the `.gitignore`

@@ -13,12 +13,30 @@ tasks:
     silent: true
 
   build:
-    desc: Build the .net9.0 Solution
+    desc: Build the .net9.0 Solution and move the files to the target folder
     cmds:
-      - dotnet build legacy/X_Launcher.App/X_Launcher.App.csproj -c Release -o target/legacy/X_Launcher.App
-      - dotnet build legacy/X_Launcher.Desktop/X_Launcher.Desktop.csproj -c Release -o target/legacy/X_Launcher.Desktop
-      - dotnet build legacy/X_Launcher.CLI/X_Launcher.CLI.csproj -c Release -o target/legacy/X_Launcher.CLI
-      - dotnet build legacy/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/legacy/X_Launcher.Core
-      - dotnet build backend/X_Launcher.Core.Service/X_Launcher.Core.Service.csproj -c Release -o target/backend/X_Launcher.Core.Service
+      - dotnet build src/backend/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/backend/X_Launcher.Core -f net9.0
+      - dotnet build src/backend/X_Launcher.Service/X_Launcher.Service.csproj -c Release -o target/backend/X_Launcher.Service -f net9.0
       - cp start-x-launcher.py target/start-x-launcher.py
-      - cp -r frontend/*  target/frontend
+      - mkdir -p target/frontend
+      - cp -r src/frontend/*  target/frontend/
+
+  build-legacy:
+    desc: Build the legacy versions
+    cmds:
+      - dotnet build src/legacy/X_Launcher.App/X_Launcher.App.csproj -c Release -o target/legacy/X_Launcher.App -f net9.0
+      - dotnet build src/legacy/X_Launcher.CLI/X_Launcher.CLI.csproj -c Release -o target/legacy/X_Launcher.CLI -f net9.0 
+      # - dotnet build src/legacy/X_Launcher.CLI.Windows/X_Launcher.CLI.Windows.csproj -c Release -o target/legacy/X_Launcher.CLI.Windows -f net9.0  # -> disabled by default to not working outside of Windows
+      - dotnet build src/legacy/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/legacy/X_Launcher.Core -f net9.0
+      - dotnet build src/legacy/X_Launcher.Desktop/X_Launcher.Desktop.csproj -c Release -o target/legacy/X_Launcher.Desktop -f net9.0
+      - cp start-x-launcher.py target/start-legacy.py
+  run:
+    desc: Run the application
+    dpends_on: [build]
+    cmds:
+      - python3 target/start-x-launcher.py 
+  run-legacy:
+    desc: Run the legacy application
+    dpends_on: [build-legacy]
+    cmds:
+      - python3 target/start-legacy.py 

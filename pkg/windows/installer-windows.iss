@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "X Launcher Core"
-#define MyAppVersion "0.0.1-pre-alpha"
+#define MyAppVersion "0.0.2~proto"
 #define MyAppPublisher "Xgui4 Studio"
 #define MyAppURL "https://www.github.com/xgui4/X-Launcher"
 #define MyAppExeName "X-Launcher.exe"

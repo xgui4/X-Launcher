@@ -9,7 +9,7 @@ depends=(
     'dotnet-runtime-9.0'
     'python'
     'pyside6'
-    'tk',
+    'tk'
     "python-platformdirs"
 )
 makedepends=(
@@ -27,13 +27,10 @@ pkgver() {
 
 build() {
   cd "${srcdir}/${pkgname}"
-  # To be determinated
+  # To be updated
 }
 
 package() {
-  install -Dm755 "${srcdir}/$pkgname/bin/start-x-launcher.py" "$pkgdir/usr/bin/start-x-launcher.py"
-  install -Dm755 "${srcdir}/$pkgname/pkg/hello-world-gtk-app.desktop" "$pkgdir/usr/share/applications/hello-world-gtk-app.desktop"
-  install -Dm644 "${srcdir}/$pkgname/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-  install -Dm644 "${srcdir}/$pkgname/README.md" "$pkgdir/usr/share/doc/$pkgname/README.md"
-  install -Dm644 "${srcdir}/$pkgname/code-of-conduct.md" "$pkgdir/usr/share/doc/$pkgname/code-of-conduct.md"
+  cd "${srcdir}/${pkgname}"
+  # To be updated
 }

@@ -1,6 +1,6 @@
 [project]
 name = "X-Launcher-Core-App"
-version = "0.0.1"
+version = "0.0.2~proto"
 description = "A Cross-Platform Minecraft Launcher Frontend written in Python 3 with Pyside 6"
 dependencies = [
     "PySide6>=6.0.0", 
