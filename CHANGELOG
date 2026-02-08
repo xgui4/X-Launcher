@@ -1,7 +1,7 @@
 # Changelog
 
 ## Feb 8 : 
-new wip setup.py file, updated wip taskfile file , re add uv.lock and remove old  run file (cause it is now obselete and will need full reworked)
+new wip setup.py file, updated wip taskfile file , re add uv.lock and remove old  run file (cause it is now obselete and will need full reworked) and added WIP changes to the packages
 
 ## January 25 2026 - 15:00
 
