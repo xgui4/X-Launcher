@@ -2,7 +2,7 @@ from configparser import ConfigParser
 import configparser
 import os
 
-import utils
+import utils.utils as utils
 
 
 class Config:

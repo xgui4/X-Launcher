@@ -2,8 +2,8 @@ import os
 from typing import Callable
 from PySide6.QtWidgets import QStyle, QWidget, QApplication, QSystemTrayIcon, QMenu
 from PySide6.QtGui import QAction, QIcon
-import utils
-from json_trans import Translator
+import utils.utils as utils
+from utils.json_trans import Translator
 
 
 def patch_freebsd_sys_tray() -> None:

@@ -1,10 +1,8 @@
 # X Launcher Core
 
-![Logo](assets/app-icon.ico)
+![Logo](assets/banner.png)
 
 A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and Pyside6 (Python/QT) for the frontend
-
-This project follow the MVVM patten.
 
 ## Framework, Library and tools used
 
@@ -19,7 +17,7 @@ This project follow the MVVM patten.
 
 - Legacy .NET Console CLI
   - C# (.NET 9)
-  - Windows version with a easier sign-in feature 
+  - Windows version with a easier sign-in feature
   - May not receive future update
 
 - QT Frontend
@@ -28,7 +26,7 @@ This project follow the MVVM patten.
   - JSON Locale
     - easily extensible by creating json file with "key" and "value"
 
-- Automation toos
+- Automation tools
   - UV (optional)
     - only work on Windows or Linux or MacOS since QT does not release QT binary for BSD in PyPi
   - Taskfile
@@ -41,29 +39,30 @@ This project follow the MVVM patten.
 
 ## Project Structure
 
-- `.*`
-  - config files for IDE
-- `backend/`
-  - `X_Launcher.Core.Service/`
-    - New Experime  ntal Backend
+- `assets`
+  - assets for the pyside 6 frontend
+- `locales`
+  - locales files for pyside 6 frontend
 - `src/`
-  - New Experimental Frontend written in Python with Pyside6 (QT)
-    - `assets`
-      - assets for the pyside 6 frontend
-    - `locales`
-      - locales files for pyside 6 frontend
-- `legacy/`
-  - Old Avalonia and C# Console App
-  - `X-Launcher.Core/`
-    - Dotnet library (an interface) containing the commune classes and method with login logic.
-  - `X-Launcher.App/`
-    - The code for the GUI / Desktop App
-  - `X-Launcher.Desktop/`
-    - Boilerplate and runnable code for the Desktop app
-  - `X-Launcher.CLI/`
-    - The code for the command line interface (CLI)
-  - `X-Launcher.CLI.Windows/`
-    - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
+  - `backend/`
+    - `X_Launcher.Service/`
+      - New Experimental Backend Server Service
+    - `X_Launcher.Core`
+      - Experimental backend logic
+  - `legacy/`
+    - Old Avalonia and C# Console App
+    - `X_Launcher.Core/`
+      - Dotnet library (an interface) containing the commune classes and method with login logic.
+    - `X_Launcher.App/`
+      - The code for the GUI / Desktop App
+    - `X_Launcher.Desktop/`
+      - Boilerplate and runnable code for the Desktop app
+    - `X_Launcher.CLI/`
+      - The code for the command line interface (CLI)
+    - `X_Launcher.CLI.Windows/`
+      - Boilerplate and runnable code for enabling Windows specific code or function for the CLI
+  - `frontend/`
+    - New Experimental Frontend written in Python with Pyside6 (QT)
 - `pkg/`
   - the packages formats for the mutltiples OS and Platform
   - `windows/`
@@ -83,22 +82,26 @@ This project follow the MVVM patten.
 - MacOS (technically would work but I offer no support for it since I do not own a Mac)
 
 ## Running from Source Code
-  - TBD
 
-## Packaging 
-  - TBD
+- Run `./start-x-launcher.py` to lauch the frontend and backend with a logging service
+- Run `./start-legacy.py` to get a CLI menu to launch old legacy version
 
-## Contributions 
-  - TBD
+## Packaging
+
+- Guide will come in the first stable release
+
+## Contributions
+
+- Guide will come in the first stable release
 
 ## Support/Moderation
-  - TB
 
-## Others Informationss
+- Code of conduct : [code-of-conduct.md](code-of-conduct.md)
+- Support will come in the first stable release
+
+## License
 
 License : MIT
-
-Code of conduct : [code-of-conduct.md](code-of-conduct.md)
 
 ## Legal Disclaimer
 

@@ -3,7 +3,7 @@ import os
 
 from PySide6.QtCore import QObject, Signal
 
-import utils
+import utils.utils as utils
 
 
 class Translator(QObject):

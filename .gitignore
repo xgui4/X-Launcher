@@ -419,8 +419,8 @@ FodyWeavers.xsd
 /X_Launcher_Core_App.egg-info/top_level.txt
 
 # bsd file
-*.core
+**.core
 
 # server generated files
 
-backend/X_Launcher.Service/versions/version_manifest_v2.json
+src/backend/X_Launcher.Service/versions/**

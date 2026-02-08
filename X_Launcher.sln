@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.App", "legacy\X_Launcher.App\X_Launcher.App.csproj", "{76AE01DF-95C2-4AB2-98E1-1E5637B7F363}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.App", "src\legacy\X_Launcher.App\X_Launcher.App.csproj", "{76AE01DF-95C2-4AB2-98E1-1E5637B7F363}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Desktop", "legacy\X_Launcher.Desktop\X_Launcher.Desktop.csproj", "{74B3E145-AF6B-49BF-B966-8076AC5BAD6D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Desktop", "src\legacy\X_Launcher.Desktop\X_Launcher.Desktop.csproj", "{74B3E145-AF6B-49BF-B966-8076AC5BAD6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI", "legacy\X_Launcher.CLI\X_Launcher.CLI.csproj", "{74DC00D3-442C-4A12-90EA-79A570F0E5C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI", "src\legacy\X_Launcher.CLI\X_Launcher.CLI.csproj", "{74DC00D3-442C-4A12-90EA-79A570F0E5C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Core.Legacy", "legacy\X_Launcher.Core\X_Launcher.Core.Legacy.csproj", "{AF09A687-341F-41B9-8A3E-EC86449518A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Core.Legacy", "src\legacy\X_Launcher.Core\X_Launcher.Core.Legacy.csproj", "{AF09A687-341F-41B9-8A3E-EC86449518A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI.Windows", "legacy\X_Launcher.CLI.Windows\X_Launcher.CLI.Windows.csproj", "{0581714B-D322-40A8-8FA3-DA0AF1634317}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.CLI.Windows", "src\legacy\X_Launcher.CLI.Windows\X_Launcher.CLI.Windows.csproj", "{0581714B-D322-40A8-8FA3-DA0AF1634317}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{AF3A9C41-232C-4325-8EB3-FB26B24FB448}"
 	ProjectSection(SolutionItems) = preProject
@@ -28,9 +28,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "legacy", "legacy", "{E150A5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "backend", "backend", "{35926EC7-CBDD-4A2E-9CAA-FB3D83CD4B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Service", "backend/X_Launcher.Service/X_Launcher.Service.csproj", "{0697FFE3-704E-42FF-A51F-89A6EE0601AD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Service", "src\backend/X_Launcher.Service/X_Launcher.Service.csproj", "{0697FFE3-704E-42FF-A51F-89A6EE0601AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Core", "backend\X_Launcher.Core\X_Launcher.Core.csproj", "{DDEB8559-AE72-4B91-8E34-7E760150DB85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "X_Launcher.Core", "src\backend\X_Launcher.Core\X_Launcher.Core.csproj", "{DDEB8559-AE72-4B91-8E34-7E760150DB85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
