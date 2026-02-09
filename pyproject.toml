@@ -1,11 +1,12 @@
 [project]
-name = "X-Launcher-Core-App"
+name = "X-Launcher-Core-QT"
 version = "0.0.2~proto"
 description = "A Cross-Platform Minecraft Launcher Frontend written in Python 3 with Pyside 6"
 dependencies = [
     "PySide6>=6.0.0", 
     "requests>=2.32.5", 
-    "platformdirs>=4.5.1"]
+    "platformdirs>=4.5.1"
+]
 
 [build-system]
 requires = ["setuptools"]
@@ -24,13 +25,37 @@ reportImplicitRelativeImport = false
 
 [tool.pyside6-project]
 files = [
+    "data/ressources.qrc",
     "assets/app-icon.ico",
-    "src/app.py",
-    "src/assets/app-icon.ico",
-    "src/assets/placeholder.jpg",
-    "src/locales/en.json",
-    "sfc/locales/fr.json",
-    "srd/json_trans.py",
-    "src/main_window.py",
+    "assets/app-icon.png",
+    "assets/placeholder.jpg",
+    "locales/en.json",
+    "locales/fr.json",
+    "src/frontend/__init__.py",
+    "src/frontend/app.py",
+    "src/frontend/utils/__init__.py",
+    "src/frontend/ui/__init__.py",
+    "src/frontend/server/__init__.py",
+    "src/frontend/server/core_connector.py",
+    "src/frontend/config/__init__.py",
+    "src/frontend/config/app_config.py",
+    "src/frontend/utils/__init__.py",
+    "src/frontend/utils/json_trans.py",
+    "src/frontend/utils/loggers.py",
+    "src/frontend/utils/utils.py",
+    "src/frontend/ui/main_window.py",
+    "src/frontend/ui/sys_tray.py",
+    "src/x-launcher-core.py",
     "start-x-launcher.py",
+    "start-legacy.py",
+    "Taskfile.yml",
+    "setup.py",
+    "code-of-conduct.md",
+    "CODE-DE-CONDUITE.md",
+    "CHANGELOG",
+    "LICENSE",
+    "scripts/build.sh",
+    "scripts/clean.sh",
+    "scripts/install.sh",
+    "scripts/package.sh"
 ]

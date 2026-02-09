@@ -41,7 +41,7 @@ WizardStyle=modern
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:default.isl"
-Name: "french"; MessagesFile: "compiler:language\french.isl"
+Name: "french"; MessagesFile: "compiler:Language\French.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked

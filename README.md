@@ -39,15 +39,17 @@ A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and
 
 ## Project Structure
 
-- `assets`
+- `assets/`
   - assets for the pyside 6 frontend
-- `locales`
+- `locales/`
   - locales files for pyside 6 frontend
+- `scripts/`
+  - Shell scripts for managin the projects via the taskfile
 - `src/`
   - `backend/`
     - `X_Launcher.Service/`
       - New Experimental Backend Server Service
-    - `X_Launcher.Core`
+    - `X_Launcher.Core/`
       - Experimental backend logic
   - `legacy/`
     - Old Avalonia and C# Console App
@@ -71,7 +73,7 @@ A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and
     - Files related to packaging for Linux Distributions
   - `freebsd/`
     - Files related to packaging/porting to FreeBSD
-- project root
+- `./` (project root)
   - docs, config and projects file for both the backend and frontend
 
 ## Platform supported
@@ -83,10 +85,20 @@ A  Cross-Platform FOSS Minecraft®️ Launcher written in C# for the backend and
 
 ## Running from Source Code
 
+### New Method 
+
+```shell
+# 1. 
+`./bin/task build`
+# 2.
+`./bin/task run`
+```
+
+### Old Method (Do a freshbuild) 
 - Run `./start-x-launcher.py` to lauch the frontend and backend with a logging service
 - Run `./start-legacy.py` to get a CLI menu to launch old legacy version
 
-## Packaging
+## Installation & Packaging
 
 - Guide will come in the first stable release
 

@@ -3,31 +3,30 @@
 import os
 from subprocess import Popen
 
-from src.frontend.utils import loggers
-from src.frontend.utils import utils
+from frontend.utils import loggers
+from frontend.utils import utils
 
 PROJECT_DIR: str = utils.get_project_root()
 
-SRC_FOLDER: str = "src"
 FRONTEND_FOLDER: str = "frontend"
 QT_APP_EXE: str = "app.py"
 
+TARGET_FOLDER: str = "target"
 BACKEND_FOLDER: str = "backend"
 BACKEND_PROJECT_FOLDER: str = "X_Launcher.Service"
 BACKEND_PROJECT_FILE: str = "X_Launcher.Service.csproj"
 
-DOTNET_FRAMEWORK: str = "net-9.0"
+# DOTNET_FRAMEWORK: str = "net-9.0"
 
 QT_APP: str = os.path.join(
-    PROJECT_DIR, SRC_FOLDER, FRONTEND_FOLDER, QT_APP_EXE
+    PROJECT_DIR, TARGET_FOLDER, FRONTEND_FOLDER, QT_APP_EXE
 )
 
 BACKEND: str = os.path.join(
-    PROJECT_DIR, SRC_FOLDER, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE
+    PROJECT_DIR, TARGET_FOLDER, BACKEND_FOLDER, BACKEND_PROJECT_FOLDER, BACKEND_PROJECT_FILE
 )
 
 NO_ERROR: str = "None"
-
 
 def run_python_parallel(project_path: str) -> Popen[bytes]:
     python_exe: str = "python"
@@ -35,23 +34,11 @@ def run_python_parallel(project_path: str) -> Popen[bytes]:
         [python_exe, project_path],
     )
 
-
-def run_dotnet_parallel(project_path: str) -> Popen[bytes]:
+def run_dotnet_parallel(dll_exe_path: str) -> Popen[bytes]:
     dotnet_exe: str = "dotnet"
-    dotnet_option_str: str = "run"
-    framework_option_str: str = "--framwework"
-    project_option_str: str = "--project"
     return Popen[bytes](
-        [
-            dotnet_exe,
-            dotnet_option_str,
-            framework_option_str,
-            DOTNET_FRAMEWORK,
-            project_option_str,
-            project_path,
-        ],
+        [ dotnet_exe, dll_exe_path ],
     )
-
 
 def main() -> None:
     logger: loggers.BasicLogger = loggers.BasicLogger()
@@ -62,13 +49,13 @@ def main() -> None:
     exit_no_error_str: str = "Exited without any issue"
     exit_with_code_str: str = "Exited with Code"
 
-    try:
-        print("Launching X Launcher Startup Script Pre-Alpha")
+    print("Launching X Launcher Startup Script 0.0.2~proto")
 
-        p1: Popen[bytes] = run_python_parallel(project_path=QT_APP)
-        p2: Popen[bytes] = run_dotnet_parallel(project_path=BACKEND)
+    try: 
+        frontend: Popen[bytes] = run_python_parallel(project_path=QT_APP)
+        backend: Popen[bytes] = run_dotnet_parallel(dll_exe_path=BACKEND)
 
-        stdout1, stderr1 = p1.communicate()
+        stdout1, stderr1 = frontend.communicate()
 
         if str(stdout1) != NO_ERROR:
             logger.info(msg=f"{frontend_name} : {stdout1}")
@@ -77,7 +64,7 @@ def main() -> None:
         else:
             logger.info(msg=f"{frontend_name} {exit_no_error_str}")
 
-        stdout2, stderr2 = p2.communicate()
+        stdout2, stderr2 = backend.communicate()
 
         if str(stdout2) != NO_ERROR:
             logger.info(msg=f"{backend_name} : {stdout2}")
@@ -86,13 +73,13 @@ def main() -> None:
         else:
             logger.info(msg=f"{backend_name} {exit_no_error_str}")
 
-        frontend_exit_code: int = p1.returncode
+        frontend_exit_code: int = frontend.returncode
         logger.info(msg=f"{frontend_name} {exit_with_code_str}: {frontend_exit_code}")
 
-        backend_exit_code: int = p2.returncode
+        backend_exit_code: int = backend.returncode
         logger.info(msg=f"{backend_name} {exit_with_code_str}:  {backend_exit_code}")
     except Exception as e:
-        logger.error(msg=f"An error occurred in start-x-launcher.py : {e}")
+        logger.error(msg=f"An error occurred in x-launcher-core.py : {e}")
 
 if __name__ == "__main__":
     main()

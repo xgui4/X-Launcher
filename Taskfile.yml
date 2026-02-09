@@ -17,7 +17,7 @@ tasks:
     cmds:
       - dotnet build src/backend/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/backend/X_Launcher.Core -f net9.0
       - dotnet build src/backend/X_Launcher.Service/X_Launcher.Service.csproj -c Release -o target/backend/X_Launcher.Service -f net9.0
-      - cp start-x-launcher.py target/start-x-launcher.py
+      - cp src/x-launcher-core.py target/x-launcher-core.py
       - mkdir -p target/frontend
       - cp -r src/frontend/*  target/frontend/
 
@@ -29,14 +29,19 @@ tasks:
       # - dotnet build src/legacy/X_Launcher.CLI.Windows/X_Launcher.CLI.Windows.csproj -c Release -o target/legacy/X_Launcher.CLI.Windows -f net9.0  # -> disabled by default to not working outside of Windows
       - dotnet build src/legacy/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/legacy/X_Launcher.Core -f net9.0
       - dotnet build src/legacy/X_Launcher.Desktop/X_Launcher.Desktop.csproj -c Release -o target/legacy/X_Launcher.Desktop -f net9.0
-      - cp start-x-launcher.py target/start-legacy.py
+      - cp start-legacy.py target/start-legacy.py
   run:
     desc: Run the application
-    dpends_on: [build]
+    depends_on: [build]
     cmds:
-      - python3 target/start-x-launcher.py 
+      - python3 target/x-launcher-core.py 
   run-legacy:
     desc: Run the legacy application
-    dpends_on: [build-legacy]
+    depends_on: [build-legacy]
     cmds:
       - python3 target/start-legacy.py 
+
+  clean:
+    desc: Clean the target folder
+    cmds:
+      - rm -rf target/*

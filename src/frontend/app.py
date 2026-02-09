@@ -6,6 +6,7 @@ import sys
 
 from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication, QMessageBox, QStyle, QSystemTrayIcon
+from __init__ import version, name, author
 
 from utils.json_trans import Translator
 from ui.main_window import MainWindow
@@ -17,6 +18,11 @@ import utils.utils as utils
 if platform.system() in ["FreeBSD", "GhostBSD"]:
     sys_tray.patch_freebsd_sys_tray()
 
+APP_NAME_STR = name
+
+APP_VERSION_STR = version
+
+AUTHOR_STR = author
 
 def main() -> None:
     app: QApplication = QApplication(sys.argv)
@@ -52,7 +58,7 @@ def main() -> None:
         QMessageBox.about(
             window,
             f"{tray.about_label} {tray.tray_title}",
-            "X-Launcher v.0.0.1\nCreated by Xgui4",
+            f"{APP_NAME_STR} v.{APP_VERSION_STR}\nCreated by {AUTHOR_STR}",
         )
 
     def show_about_qt() -> None:
@@ -64,4 +70,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    print("Launching X Launcher Core QT App")
     main()

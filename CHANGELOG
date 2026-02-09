@@ -1,5 +1,22 @@
 # Changelog
 
+
+## Feb 9 :
+
+Add initial project structure and setup scripts
+
+- Created resource file `ressources.qrc` for asset management.
+- Added French language support with `French.isl`.
+- Implemented Inno Setup script `setupv2.iss` for Windows installer.
+- Added build script `build.sh` for backend and frontend compilation.
+- Created clean, install, and package scripts for project management.
+- Established configuration structure in `src/frontend/config`.
+- Developed configuration handling in `src/frontend/utils/config.py`.
+- Implemented main application logic in `src/x-launcher-core.py`.
+- Initialized project file for KDevelop with `x-launcher.kdev4`.
+
+and more! :)
+
 ## Feb 8 : 
 new wip setup.py file, updated wip taskfile file , re add uv.lock and remove old  run file (cause it is now obselete and will need full reworked) and added WIP changes to the packages
 

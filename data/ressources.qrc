@@ -1,0 +1,13 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="assets">
+        <file alias="app-icon.ico">assets/app-icon.ico</file>
+        <file alias="app-icon.png">assets/app-icon.png</file>
+        <file alias="banner.png">assets/banner.png</file>
+        <file alias="placeholder.jpg">assets/placeholder.jpg</file>
+    </qresource>
+    <qresource prefix="locales">
+        <file alias="en.json">locales/en.json</file>
+        <file alias="fr.json">locales/fr.json</file>
+    </qresource>
+</RCC>

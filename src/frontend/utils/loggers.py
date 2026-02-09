@@ -5,7 +5,7 @@ import os
 from platformdirs import user_log_dir
 
 USER_LOG_PATH: str = user_log_dir(
-    appname="X_Laucher_Core", appauthor="Xgui4_Studio", version="pre-alpha"
+    appname="X_Laucher_Core", appauthor="Xgui4", version="0.0.2~proto"
 )
 
 LOG_FILE: str = os.path.join(USER_LOG_PATH, "launcher.log")

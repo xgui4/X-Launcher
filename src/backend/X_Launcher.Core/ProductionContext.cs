@@ -4,8 +4,8 @@ namespace X_Launcher_Core;
 
 public static class ProductionContext
 {
-    public const string Version = "Prototype (branch develop)";
-    public const string Developer = "Xgui4 Studio";
+    public const string Version = "0.0.2~proto";
+    public const string Developer = "Xgui4";
     public const string Product = "X Launcher Core";
     public const string License = "MIT License";
     public const string Description = "A cross-platform FOSS Minecraft Launcher Backend written in C#";
