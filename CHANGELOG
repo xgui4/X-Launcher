@@ -1,7 +1,11 @@
 # Changelog
 
+## March 28
 
-## Feb 9 :
+- fixed Qt Ressources
+- added a WIP UI file for the launcher
+
+## Feb 9 
 
 Add initial project structure and setup scripts
 
