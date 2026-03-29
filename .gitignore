@@ -424,3 +424,7 @@ FodyWeavers.xsd
 # server generated files
 
 src/backend/X_Launcher.Service/versions/**
+
+**/**_ui.py
+**/**_rc.py
+.gitignore

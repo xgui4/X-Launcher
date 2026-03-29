@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 
-dotnet build 'src/backend/X_Launcher.Core/X_Launcher.Core.csproj' -c Release -o 'target/backend/X_Launcher.Core' -f net9.0
+PROJECT_ROOT="${1:-../}"
 
-dotnet build 'src/backend/X_Launcher.Service/X_Launcher.Service.csproj' -c Release -o 'target/backend/X_Launcher.Service' -f net9.0
+/usr/lib/qt6/rcc -g python "$PROJECT_ROOT/data/ressources.qrc" -o "$PROJECT_ROOT/src/frontend/ressources_rc.py" 
 
-cp 'src/x-launcher-core.py' target/x-launcher-core.py
+/usr/lib/qt6/uic -g python "$PROJECT_ROOT/launcher.ui" -o "$PROJECT_ROOT/src/frontend/launcher_ui.py"
 
-mkdir -p target/frontend
+dotnet build "$PROJECT_ROOT/src/backend/X_Launcher.Core/X_Launcher.Core.csproj" -c Release -o "$PROJECT_ROOT/target/backend/X_Launcher.Core" -f net9.0
 
-cp -r src/frontend/*  target/frontend
+dotnet build "$PROJECT_ROOT/src/backend/X_Launcher.Service/X_Launcher.Service.csproj" -c Release -o "$PROJECT_ROOT/target/backend/X_Launcher.Service" -f net9.0
+
+cp "$PROJECT_ROOT/src/x-launcher-core.py" "$PROJECT_ROOT/target/x-launcher-core.py"
+
+mkdir -p "$PROJECT_ROOT/target/frontend"
+
+cp -r "$PROJECT_ROOT"/src/frontend/* "$PROJECT_ROOT/target/frontend/"

@@ -1,19 +1,36 @@
+[build-system]
+requires = ["hatchling", "pyside6; sys_platform == 'win32' or sys_platform == 'linux' or sys_platform == 'darwin'"]
+build-backend = "hatchling.build"
+
 [project]
 name = "X-Launcher-Core-QT"
-version = "0.0.2~proto"
+version = "0.0.3dev"
+requires-python = ">3.10"
 description = "A Cross-Platform Minecraft Launcher Frontend written in Python 3 with Pyside 6"
+license = "MIT"
+readme = "README.md"
+license-files = [ "license.md" ] 
 dependencies = [
-    "PySide6>=6.0.0", 
-    "requests>=2.32.5", 
-    "platformdirs>=4.5.1"
+    "pyside6", 
+    "requests", 
+    "platformdirs"
 ]
 
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+[project.urls]
+Repository = "https://github.com/xgui4/x-launcher"
+LicenseURL = "https://opensource.org/license/mit"
 
-[tool.setuptools]
-packages = ["src"]
+[tool.hatch.build.targets.wheel.hooks.custom]
+path = "hatch_build.py"
+
+[tool.hatch.build]
+artifacts = [
+    "**/**_ui.py",
+    "**/**_rc.py",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/frontend"]
 
 [tool.pyright]
 venvPath = "."
@@ -26,36 +43,21 @@ reportImplicitRelativeImport = false
 [tool.pyside6-project]
 files = [
     "data/ressources.qrc",
-    "assets/app-icon.ico",
-    "assets/app-icon.png",
-    "assets/placeholder.jpg",
-    "locales/en.json",
-    "locales/fr.json",
     "src/frontend/__init__.py",
     "src/frontend/app.py",
     "src/frontend/utils/__init__.py",
     "src/frontend/ui/__init__.py",
     "src/frontend/server/__init__.py",
     "src/frontend/server/core_connector.py",
-    "src/frontend/config/__init__.py",
-    "src/frontend/config/app_config.py",
     "src/frontend/utils/__init__.py",
     "src/frontend/utils/json_trans.py",
     "src/frontend/utils/loggers.py",
     "src/frontend/utils/utils.py",
-    "src/frontend/ui/main_window.py",
+    "src/launcher.ui",
     "src/frontend/ui/sys_tray.py",
     "src/x-launcher-core.py",
     "start-x-launcher.py",
     "start-legacy.py",
     "Taskfile.yml",
-    "setup.py",
-    "code-of-conduct.md",
-    "CODE-DE-CONDUITE.md",
-    "CHANGELOG",
-    "LICENSE",
-    "scripts/build.sh",
-    "scripts/clean.sh",
-    "scripts/install.sh",
-    "scripts/package.sh"
+    "setup.py"
 ]

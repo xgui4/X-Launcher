@@ -9,20 +9,23 @@ tasks:
   default:
     desc: Print a greeting message
     cmds:
-      - echo "{{.GREETING}}"
+      - echo "{{.GREETING}} from task" 
     silent: true
 
   build:
-    desc: Build the .net9.0 Solution and move the files to the target folder
+    desc: Build the backend and prepare the pyside6 app
     cmds:
+      - /usr/lib/qt6/rcc -g python "data/ressources.qrc" -o "src/frontend/ressources_rc.py" 
+      - /usr/lib/qt6/uic -g python "launcher.ui" -o "src/frontend/launcher_ui.py"
       - dotnet build src/backend/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/backend/X_Launcher.Core -f net9.0
       - dotnet build src/backend/X_Launcher.Service/X_Launcher.Service.csproj -c Release -o target/backend/X_Launcher.Service -f net9.0
       - cp src/x-launcher-core.py target/x-launcher-core.py
       - mkdir -p target/frontend
+      - cp -r locales/*  target/frontend/locales/
       - cp -r src/frontend/*  target/frontend/
 
   build-legacy:
-    desc: Build the legacy versions
+    desc: Build the legacy .NET versions
     cmds:
       - dotnet build src/legacy/X_Launcher.App/X_Launcher.App.csproj -c Release -o target/legacy/X_Launcher.App -f net9.0
       - dotnet build src/legacy/X_Launcher.CLI/X_Launcher.CLI.csproj -c Release -o target/legacy/X_Launcher.CLI -f net9.0 
@@ -30,6 +33,12 @@ tasks:
       - dotnet build src/legacy/X_Launcher.Core/X_Launcher.Core.csproj -c Release -o target/legacy/X_Launcher.Core -f net9.0
       - dotnet build src/legacy/X_Launcher.Desktop/X_Launcher.Desktop.csproj -c Release -o target/legacy/X_Launcher.Desktop -f net9.0
       - cp start-legacy.py target/start-legacy.py
+  debug-ui:
+    desc: Run the main python-app and compiles the ui files without any other tasks
+    cmds:
+      - /usr/lib/qt6/rcc -g python "data/ressources.qrc" -o "src/frontend/ressources_rc.py" 
+      - /usr/lib/qt6/uic -g python "launcher.ui" -o "src/frontend/launcher_ui.py"
+      - python3 src/frontend/app.py
   run:
     desc: Run the application
     depends_on: [build]

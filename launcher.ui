@@ -64,6 +64,9 @@
         </item>
         <item>
          <widget class="QLabel" name="account_name_label">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="text">
            <string>Accout Name</string>
           </property>
@@ -83,9 +86,15 @@
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="WideBar" name="instanceToolBar">
+  <widget class="QToolBar" name="instanceToolBar">
    <property name="enabled">
     <bool>true</bool>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+     <horstretch>1</horstretch>
+     <verstretch>1</verstretch>
+    </sizepolicy>
    </property>
    <property name="windowTitle">
     <string>Instance Toolbar</string>
@@ -784,13 +793,6 @@
    </property>
   </action>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>WideBar</class>
-   <extends>QToolBar</extends>
-   <header>ui/widgets/WideBar.h</header>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="data/ressources.qrc"/>
  </resources>

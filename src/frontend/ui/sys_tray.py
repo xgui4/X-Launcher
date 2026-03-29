@@ -5,7 +5,6 @@ from PySide6.QtGui import QAction, QIcon
 import utils.utils as utils
 from utils.json_trans import Translator
 
-
 def patch_freebsd_sys_tray() -> None:
     """Specific Patch for FreeBSD"""
     # Trick KDE plugin into falling back to standard X11 tray protocols
@@ -17,10 +16,8 @@ def patch_freebsd_sys_tray() -> None:
     # Disable the portal error causing the crash
     os.environ["QT_NO_XDG_DESKTOP_PORTAL"] = "1"
 
-
 def set_theme_after_patch(app: QApplication) -> None:
-    _NULL: QStyle | None = app.setStyle("breeze")
-
+    _ = app.setStyle("breeze")
 
 class SysTrayMenu(QMenu):
     def __init__(
@@ -82,7 +79,7 @@ def connect_menu_to_systray(
     menu.quit_action.triggered.connect(  # pyright: ignore[reportUnknownMemberType, reportAttributeAccessIssue]
         app.quit
     )  
-    _NULL = menu.toggle_action.triggered.connect(
+    _ = menu.toggle_action.triggered.connect(
         lambda: window.hide() if window.isVisible() else window.show()
     )
     tray.setContextMenu(menu)
