@@ -35,10 +35,7 @@ packages = ["src/frontend"]
 [tool.pyright]
 venvPath = "."
 venv = ".venv"
-reportAny = false
-reportExplicitAny = false
-reportMissingTypeStubs = false
-reportImplicitRelativeImport = false
+extraPaths = ["./src/frontend"]
 
 [tool.pyside6-project]
 files = [

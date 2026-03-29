@@ -1,10 +1,11 @@
 #!/usr/bin/env python
+
 import os
 import subprocess
 
 print("Do you already have task file installed ?")
 
-if os.name == "poisx":
+if os.name == "posix":
     print(
         subprocess.run(
             [
@@ -22,7 +23,7 @@ else:
 
 print("Do you already have UV installed ?")
 
-if os.name == "poisx":
+if os.name == "posix":
     print(
         subprocess.run(["curl", "-LsSf", "https://astral.sh/uv/install.sh", "|", "sh"])
     )

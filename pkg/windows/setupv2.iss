@@ -3,7 +3,7 @@
 ; Non-commercial use only
 
 #define MyAppName "X Launcher Core"
-#define MyAppVersion "0.0.2~proto"
+#define MyAppVersion "0.0.3dev"
 #define MyAppPublisher "Xgui4"
 #define MyAppURL "https://github.com/xgui4/x-launcher"
 #define MyAppExeName "x-launcher-core.py"

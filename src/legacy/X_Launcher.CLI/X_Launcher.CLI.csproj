@@ -1,26 +1,40 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>net9.0</TargetFrameworks>
+    <TargetFramework>net9.0</TargetFramework>
     <RootNamespace>X_Launcher_CLI</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>X-Launcher</AssemblyName>
     <IsPackable>false</IsPackable>
-    <Company>Xgui4 Studio</Company>
+    <Company>Xgui4</Company>
     <Product>X Launcher</Product>
-    <AssemblyVersion>0.0.0.1</AssemblyVersion>
-    <FileVersion>0.0.0.1</FileVersion>
-    <NeutralLanguage>en-001</NeutralLanguage>
-    <Version>0.0.0.1</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0.0</Version>
     <Title>X Launcher CLI</Title>
-    <Authors>Xgui4 Studio</Authors>
+    <Authors>Xgui4</Authors>
     <Description>Launch Minecraft From The Command Line !</Description>
     <Copyright>Xgui4©️ MIT License</Copyright>
     <PackageProjectUrl>https://github.com/xgui4/X-Launcher</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/xgui4/X-Launcher?tab=MIT-1-ov-file#readme</PackageLicenseUrl>
+    <PackageIcon>app-icon.png</PackageIcon>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin/Debug/</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin/Release/</OutputPath>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\X_Launcher.Core\X_Launcher.Core.csproj" />
+    <ProjectReference Include="..\X_Launcher.Core\X_Launcher.Core.Legacy.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\assets\app-icon.png">
+      <Pack>True</Pack>
+      <Link>app-icon.png</Link>
+    </None>
   </ItemGroup>
 </Project>

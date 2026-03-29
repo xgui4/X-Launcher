@@ -5,9 +5,7 @@ from PySide6.QtCore import QObject, Signal
 
 import utils.utils as utils
 
-
 class Translator(QObject):
-
     languageChanged: Signal = Signal()  # Signal QT about the language changes
 
     FALLBACK_LANG: str = "en"

@@ -4,7 +4,6 @@ import os
 
 import utils.utils as utils
 
-
 class Config:
     CONFIG_FILENAME: str = "config.ini"
     INTERFACE_CONFIG: str = "interface"

@@ -6,7 +6,7 @@ public class GameConfig
 {
     public const int DefaultMaximumMemory = 4000;
     public const int DefaultMinimumMemory = 0;
-    public const string DefaultVersion = "1.21.4"; // temp 
+    public const string DefaultVersion = "1.20.1";
     private static readonly string DefaultMinecraftPath = MinecraftPath.GetOSDefaultPath();
     public Guid Id { get; private set; }
     public string? Version { get; private set; }

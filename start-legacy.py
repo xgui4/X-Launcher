@@ -30,10 +30,8 @@ BACKEND: str = os.path.join(
     PROJECT_DIR, "src", "backend", "X_Launcher.Service", "X_Launcher.Service.csproj"
 )
 
-
 def show_msgbox(title: str, msg: str) -> None:
-    _NULL: str = messagebox.showinfo(title, message=msg)
-
+    _ = messagebox.showinfo(title, message=msg)
 
 def run_dotnet(project_path: str) -> None:
     print(
@@ -43,10 +41,8 @@ def run_dotnet(project_path: str) -> None:
         )
     )
 
-
 def run_python(project_path: str) -> None:
     print(subprocess.run(["python", project_path], check=True))
-
 
 def run_python_parallel(project_path: str) -> None:
     print(
@@ -55,14 +51,12 @@ def run_python_parallel(project_path: str) -> None:
         )
     )
 
-
 def run_dotnet_parallel(project_path: str) -> None:
     print(
         subprocess.Popen(
             ["dotnet", "run", "--framework", "net9.0", "--project", project_path],
         )
     )
-
 
 def main() -> None:
     print(STARTUP_STR)
@@ -83,7 +77,6 @@ def main() -> None:
     else:
         print("Invalid option.")
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()

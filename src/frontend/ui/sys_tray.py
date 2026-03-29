@@ -1,8 +1,11 @@
 import os
+
 from typing import Callable
 from PySide6.QtWidgets import QStyle, QWidget, QApplication, QSystemTrayIcon, QMenu
 from PySide6.QtGui import QAction, QIcon
+
 import utils.utils as utils
+
 from utils.json_trans import Translator
 
 def patch_freebsd_sys_tray() -> None:
@@ -73,10 +76,10 @@ def connect_menu_to_systray(
     tray: SysTray,
     window: QWidget,
 ) -> None:
-    menu.quit_action = menu.addAction(  # pyright: ignore[reportAttributeAccessIssue]
+    menu.quit_action = menu.addAction( 
         quit_label
-    )  
-    menu.quit_action.triggered.connect(  # pyright: ignore[reportUnknownMemberType, reportAttributeAccessIssue]
+    )   # type: ignore
+    menu.quit_action.triggered.connect( # type: ignore
         app.quit
     )  
     _ = menu.toggle_action.triggered.connect(

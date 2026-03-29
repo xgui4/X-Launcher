@@ -1,5 +1,12 @@
 # Changelog
 
+## March 29 
+
+- Updated .NET codebase and library 
+- Updated the scripts for the Python Frontend
+- Formatting of the Python Code Base and fix the pyproject.toml file for Pylance
+- Update the version
+
 ## March 28
 
 - fixed Qt Ressources

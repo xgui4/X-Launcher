@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-rm -rf target/*
+PROJECT_ROOT="${1:-../}"
 
-find . -name "__pycache__" -type d -delete
+rm -rf "$PROJECT_ROOT/target/"*
+
+find "$PROJECT_ROOT" -name "__pycache__" -type d -delete

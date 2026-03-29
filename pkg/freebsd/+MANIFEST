@@ -1,6 +1,6 @@
 {
   "name" :  "x-launcher-core",
-  "version" : "0.0.2~proto",
+  "version" : "0.0.3dev",
   "origin": "games/x-launcher-core",
   "comment" : "A Cross-platform FOSS Minecraft Launcher",
   "desc" : "A Cross-Platform FOSS Minecraft Launcher written in C# for the backend and python QT (Pyside6) for the backend",

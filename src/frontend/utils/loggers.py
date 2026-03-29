@@ -13,7 +13,6 @@ DEFAULT_LEVEL: int = logging.INFO
 DEFAULT_NAME: str = "x_launcher_core"
 DEFAULT_LOG_FORMAT: str = "%(asctime)s - %(levelname)s - %(message)s"
 
-
 class BasicLogger:
     def __init__(
         self,

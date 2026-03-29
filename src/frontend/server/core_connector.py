@@ -1,6 +1,6 @@
 import json
-
 import requests
+
 from requests.exceptions import RequestException
 from requests.models import Response
 

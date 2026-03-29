@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net9.0</TargetFrameworks>
+    <RootNamespace>X_Launcher_CLI</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>X-Launcher</AssemblyName>
+    <IsPackable>false</IsPackable>
+    <Company>Xgui4 Studio</Company>
+    <Product>X Launcher</Product>
+    <AssemblyVersion>0.0.0.1</AssemblyVersion>
+    <FileVersion>0.0.0.1</FileVersion>
+    <NeutralLanguage>en-001</NeutralLanguage>
+    <Version>0.0.0.1</Version>
+    <Title>X Launcher CLI</Title>
+    <Authors>Xgui4 Studio</Authors>
+    <Description>Launch Minecraft From The Command Line !</Description>
+    <Copyright>Xgui4©️ MIT License</Copyright>
+    <PackageProjectUrl>https://github.com/xgui4/X-Launcher</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/xgui4/X-Launcher?tab=MIT-1-ov-file#readme</PackageLicenseUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\X_Launcher.Core\X_Launcher.Core.csproj" />
+  </ItemGroup>
+</Project>

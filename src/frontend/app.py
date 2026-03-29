@@ -18,6 +18,14 @@ import utils.utils as utils
 if platform.system() in ["FreeBSD", "GhostBSD"]:
     sys_tray.patch_freebsd_sys_tray()
 
+if platform.system() == "Linux": 
+    _LINUX_QT6_PATH = "/usr/lib/qt6/plugins"
+    os.environ["QT_PLUGIN_PATH"] = _LINUX_QT6_PATH
+
+if platform.system() == "FreeBSD": 
+   _FREEBSD_QT6_PATH = "/usr/local/lib/qt6/plugins"
+   os.environ["QT_PLUGIN_PATH"] = _FREEBSD_QT6_PATH
+
 APP_NAME_STR = name
 
 APP_VERSION_STR = version
@@ -69,11 +77,11 @@ def main() -> None:
 
     button: QPushButton = QPushButton(button_text)
 
-    _NULL = button.clicked.connect(
+    _ = button.clicked.connect(
         lambda: tray.showMessage(
             window_title,
             msg_body + " : " + core_connector.connect_to_server(),
-            QIcon(os.path.join(utils.get_assets_dir(), "app-icon.ico")),
+            QIcon(":/assets/app-icon.ico"),
         )
     )
 
@@ -81,7 +89,7 @@ def main() -> None:
     tray.send_msg(
         title=tray.tray_title,
         msg=tray.tray_msg,
-        icon=QIcon(os.path.join(utils.get_assets_dir(), "app-icon.ico")),
+        icon=QIcon(":/assets/app-icon.ico"),
     )
 
     def show_about() -> None:

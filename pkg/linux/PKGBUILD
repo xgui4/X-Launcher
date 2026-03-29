@@ -1,5 +1,5 @@
 pkgname=X-Launcher-Core
-pkgver=git
+pkgver=0.0.3dev-git
 pkgrel=1
 pkgdesc="A Cross-Platform Minecraft Launcher"
 arch=('x86_64')
