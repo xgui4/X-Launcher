@@ -51,14 +51,28 @@
          <height>102</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
         <item>
-         <widget class="QLabel" name="label">
+         <widget class="QLabel" name="logo_img">
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
            <pixmap resource="data/ressources.qrc">:/assets/banner.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="account_name_label">
+          <property name="text">
+           <string>Accout Name</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="account_name_img">
+          <property name="text">
+           <string>Acccount Image</string>
           </property>
          </widget>
         </item>
