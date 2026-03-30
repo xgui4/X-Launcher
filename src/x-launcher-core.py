@@ -16,8 +16,6 @@ BACKEND_FOLDER: str = "backend"
 BACKEND_PROJECT_FOLDER: str = "X_Launcher.Service"
 BACKEND_PROJECT_FILE: str = "X_Launcher.Service.csproj"
 
-# DOTNET_FRAMEWORK: str = "net-9.0"
-
 QT_APP: str = os.path.join(
     PROJECT_DIR, TARGET_FOLDER, FRONTEND_FOLDER, QT_APP_EXE
 )
@@ -49,7 +47,7 @@ def main() -> None:
     exit_no_error_str: str = "Exited without any issue"
     exit_with_code_str: str = "Exited with Code"
 
-    print("Launching X Launcher Startup Script 0.0.2~proto")
+    print("Launching X Launcher Startup Script 0.0.3dev")
 
     try: 
         frontend: Popen[bytes] = run_python_parallel(project_path=QT_APP)

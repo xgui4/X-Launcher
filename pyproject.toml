@@ -12,6 +12,7 @@ readme = "README.md"
 license-files = [ "license.md" ] 
 dependencies = [
     "pyside6", 
+    "hatch",
     "requests", 
     "platformdirs"
 ]
@@ -44,6 +45,8 @@ files = [
     "src/frontend/app.py",
     "src/frontend/utils/__init__.py",
     "src/frontend/ui/__init__.py",
+    "src/frontend/ui/sys_tray.py",
+    "src/frontend/ui/browser_dialog.py",
     "src/frontend/server/__init__.py",
     "src/frontend/server/core_connector.py",
     "src/frontend/utils/__init__.py",

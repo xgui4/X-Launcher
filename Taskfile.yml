@@ -37,6 +37,7 @@ tasks:
     desc: Run the main python-app and compiles the ui files without any other tasks
     cmds:
       - /usr/lib/qt6/rcc -g python "data/ressources.qrc" -o "src/frontend/ressources_rc.py" 
+      - /usr/lib/qt6/uic -g python "about.ui" -o "src/frontend/about_ui.py"
       - /usr/lib/qt6/uic -g python "launcher.ui" -o "src/frontend/launcher_ui.py"
       - python3 src/frontend/app.py
   run:

@@ -1,5 +1,13 @@
 # Changelog
 
+## March 29 - Part 2
+
+- Update The new ui to connect the launcher
+- Fix the backend
+- Add a about section and browser dialog witt their respective changes
+- More info in the main `__init__.py` file
+- Bug fixes and minors adjustemens 
+
 ## March 29 
 
 - Updated .NET codebase and library 
