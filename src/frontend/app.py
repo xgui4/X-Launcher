@@ -47,13 +47,10 @@ class MyWindow(QMainWindow):
         super().__init__()
 
         self.ui = Ui_MainWindow()
-
         self.aboutDiag = QDialog()
-
         self.about = Ui_AboutDialog()
 
         self.ui.setupUi(self)
-
         self.about.setupUi(self.aboutDiag)
 
         app_icon = QPixmap(":/assets/app-icon.png");
@@ -83,11 +80,8 @@ class MyWindow(QMainWindow):
         app : QCoreApplication = QApplication.instance() # type: ignore
 
         self.ui.actionCloseWindow.triggered.connect(app.quit)
-
         self.ui.actionMoreNews.triggered.connect(self.news_site)
-
         self.ui.actionAbout.triggered.connect(self.aboutDiag.show)
-
         self.ui.actionAbout.setText(f"About {name}")
 
 def main() -> None:
